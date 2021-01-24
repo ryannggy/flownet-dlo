@@ -15,6 +15,7 @@ from os.path import *
 
 import models, losses, datasets
 from utils import flow_utils, tools
+import pandas as pd
 
 # fp32 copy of parameters for update
 global param_copy
@@ -255,12 +256,12 @@ if __name__ == '__main__':
         else:
             model.train()
             title = 'Training Epoch {}'.format(epoch)
-            args.train_n_batches = np.inf if args.train_n_batches < 0 else args.train_n_batches
+            args.train_n_batches = np.inf if args.train_n_batches < 0 else  args.train_n_batches
             progress = tqdm(tools.IteratorTimer(data_loader), ncols=120, total=np.minimum(len(data_loader), args.train_n_batches), smoothing=.9, miniters=1, leave=True, position=offset, desc=title)
 
         last_log_time = progress._time()
         for batch_idx, (data, target) in enumerate(progress):
-
+            
             data, target = [Variable(d) for d in data], [Variable(t) for t in target]
             if args.cuda and args.number_gpus == 1:
                 data, target = [d.cuda(non_blocking=True) for d in data], [t.cuda(non_blocking=True) for t in target]
@@ -305,7 +306,7 @@ if __name__ == '__main__':
 
             loss_labels.append('load')
             loss_values.append(progress.iterable.last_duration)
-
+            print(loss_values)
             # Print out statistics
             statistics.append(loss_values)
             title = '{} Epoch {}'.format('Validating' if is_validate else 'Training', epoch)
@@ -410,6 +411,8 @@ if __name__ == '__main__':
     offset = 1
     last_epoch_time = progress._time()
     global_iteration = 0
+    
+    loss_list = pd.DataFrame(columns=['Epoch', 'Train Loss', 'Validation Loss'])
 
     for epoch in progress:
         if args.inference or (args.render_validation and ((epoch - 1) % args.validation_frequency) == 0):
@@ -419,7 +422,7 @@ if __name__ == '__main__':
         if not args.skip_validation and ((epoch - 1) % args.validation_frequency) == 0:
             validation_loss, _ = train(args=args, epoch=epoch - 1, start_iteration=global_iteration, data_loader=validation_loader, model=model_and_loss, optimizer=optimizer, logger=validation_logger, is_validate=True, offset=offset)
             offset += 1
-
+            
             is_best = False
             if validation_loss < best_err:
                 best_err = validation_loss
@@ -435,11 +438,11 @@ if __name__ == '__main__':
             checkpoint_progress.close()
             offset += 1
 
+
         if not args.skip_training:
             train_loss, iterations = train(args=args, epoch=epoch, start_iteration=global_iteration, data_loader=train_loader, model=model_and_loss, optimizer=optimizer, logger=train_logger, offset=offset)
             global_iteration += iterations
             offset += 1
-
             # save checkpoint after every validation_frequency number of epochs
             if ((epoch - 1) % args.validation_frequency) == 0:
                 checkpoint_progress = tqdm(ncols=100, desc='Saving Checkpoint', position=offset)
@@ -451,7 +454,16 @@ if __name__ == '__main__':
                 checkpoint_progress.update(1)
                 checkpoint_progress.close()
 
-
+        
         train_logger.add_scalar('seconds per epoch', progress._time() - last_epoch_time, epoch)
         last_epoch_time = progress._time()
+
+        if not args.skip_validation and not args.skip_training:
+            loss_list.loc[epoch] = [epoch] + [train_loss] + [validation_loss]
+        elif args.skip_validation and not args.skip_training:
+            loss_list.loc[epoch] = [epoch] + [train_loss] + ['']
+        else:
+            loss_list.loc[epoch] = [epoch] + [''] + [validation_loss]
+        loss_list.to_csv(f"./loss_list_{epoch}.csv", sep=',', index=False)
     print("\n")
+

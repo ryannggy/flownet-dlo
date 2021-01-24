@@ -142,3 +142,8 @@ def save_checkpoint(state, is_best, path, prefix, filename='checkpoint.pth.tar')
     if is_best:
         shutil.copyfile(name, prefix_save + '_model_best.pth.tar')
 
+        tools.save_checkpoint({'arch': args.model,
+                               'epoch': epoch,
+                               'state_dict': model_and_loss.module.model.state_dict(),
+                               'best_EPE': best_err},
+                              is_best, args.save, args.model)
