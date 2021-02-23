@@ -305,7 +305,7 @@ if __name__ == '__main__':
 
             loss_labels.append('load')
             loss_values.append(progress.iterable.last_duration)
-            print(loss_values)
+            # print(loss_values)
             # Print out statistics
             statistics.append(loss_values)
             title = '{} Epoch {}'.format('Validating' if is_validate else 'Training', epoch)
