@@ -463,8 +463,10 @@ if __name__ == '__main__':
             loss_list.loc[epoch] = [epoch] + [train_loss] + ['']
         else:
             loss_list.loc[epoch] = [epoch] + [''] + [validation_loss]
+
         loss_list.to_csv(f"./checkpoints/loss_list_{epoch}.csv", sep=',', index=False)
-        os.remove(f"./checkpoints/loss_list_{epoch-1}.csv")
+        if os.path.exists(f'./checkpoints/loss_list_{epoch-1}.csv'):
+            os.remove(f"./checkpoints/loss_list_{epoch-1}.csv")
 
     print("\n")
 
