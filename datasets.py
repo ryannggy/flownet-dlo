@@ -309,7 +309,7 @@ class MpiSintel(data.Dataset):
         images = list(map(cropper, images))
         flow = cropper(flow)
 
-        images = np.array(images).transpose(1,0,1,2)
+        images = np.array(images).transpose(3,0,1,2)
         
         flow = flow.transpose(2,0,1)
 
