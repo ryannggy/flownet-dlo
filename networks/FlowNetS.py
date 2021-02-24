@@ -60,14 +60,20 @@ class FlowNetS(nn.Module):
                 init.xavier_uniform_(m.weight)
                 # init_deconv_bilinear(m.weight)
         self.upsample1 = nn.Upsample(scale_factor=4, mode='bilinear')
-
+        self.dropout = nn.Dropout(0.5)
+        
     def forward(self, x):
-        out_conv1 = self.conv1(x)
-        out_conv2 = self.conv2(out_conv1)
-        out_conv3 = self.conv3_1(self.conv3(out_conv2))
-        out_conv4 = self.conv4_1(self.conv4(out_conv3))
-        out_conv5 = self.conv5_1(self.conv5(out_conv4))
-        out_conv6 = self.conv6_1(self.conv6(out_conv5))
+        out_conv1  = self.conv1(x)
+        out_conv1d = self.dropout(out_conv1)
+        out_conv2  = self.conv2(out_conv1d)
+        out_conv2d = self.dropout(out_conv2d)
+        out_conv3  = self.conv3_1(self.conv3(out_conv2d))
+        out_conv3d = self.dropout(out_conv3d)
+        out_conv4  = self.conv4_1(self.conv4(out_conv3d))
+        out_conv4d = self.dropout(out_conv4)
+        out_conv5  = self.conv5_1(self.conv5(out_conv4d))
+        out_conv5d = self.dropout(out_conv5)
+        out_conv6  = self.conv6_1(self.conv6(out_conv5d))
 
         flow6 = self.predict_flow6(out_conv6)
         flow6_up = self.upsampled_flow6_to_5(flow6)
@@ -76,6 +82,7 @@ class FlowNetS(nn.Module):
         concat5 = torch.cat((out_conv5, out_deconv5, flow6_up), 1)
         flow5 = self.predict_flow5(concat5)
         flow5_up = self.upsampled_flow5_to_4(flow5)
+
         out_deconv4 = self.deconv4(concat5)
 
         concat4 = torch.cat((out_conv4, out_deconv4, flow5_up), 1)
@@ -84,6 +91,7 @@ class FlowNetS(nn.Module):
         out_deconv3 = self.deconv3(concat4)
 
         concat3 = torch.cat((out_conv3, out_deconv3, flow4_up), 1)
+
         flow3 = self.predict_flow3(concat3)
         flow3_up = self.upsampled_flow3_to_2(flow3)
         out_deconv2 = self.deconv2(concat3)
