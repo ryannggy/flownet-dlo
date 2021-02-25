@@ -254,22 +254,44 @@ class FlowNet2C(FlowNetC.FlowNetC):
 
 class FlowNet2S(FlowNetS.FlowNetS):
     def __init__(self, args, batchNorm=False, div_flow=20):
-        super(FlowNet2S,self).__init__(args, input_channels = 6, batchNorm=batchNorm)
+        # super(FlowNet2S,self).__init__(args, input_channels = 6, batchNorm=batchNorm)  # original input channels is only 6 for 2 images
+        super(FlowNet2S,self).__init__(args, input_channels = 50, batchNorm=batchNorm)  # changed input channels for 50 image inputs
+        # super(FlowNet2S,self).__init__(args, input_channels = 100, batchNorm=batchNorm)  # changed input channels for 50 image inputs
         self.rgb_max = args.rgb_max
         self.div_flow = div_flow
         
     def forward(self, inputs):
         rgb_mean = inputs.contiguous().view(inputs.size()[:2]+(-1,)).mean(dim=-1).view(inputs.size()[:2] + (1,1,1,))
         x = (inputs - rgb_mean) / self.rgb_max
-        x = torch.cat( (x[:,:,0,:,:], x[:,:,1,:,:]), dim = 1)
+        
+        """ Fix X to allow 50 images """
+        # x = torch.cat( (x[:,:,0,:,:], x[:,:,1,:,:]), dim = 1)   # this is original X for image pair input
+        x = torch.cat( (x[:,:,0,:,:], x[:,:,1,:,:], x[:,:,3,:,:], x[:,:,4,:,:], x[:,:,5,:,:], x[:,:,6,:,:],
+                        x[:,:,7,:,:], x[:,:,8,:,:], x[:,:,9,:,:], x[:,:,10,:,:], x[:,:,11,:,:], x[:,:,12,:,:],
+                        x[:,:,13,:,:], x[:,:,14,:,:], x[:,:,15,:,:], x[:,:,16,:,:], x[:,:,17,:,:], x[:,:,18,:,:],
+                        x[:,:,19,:,:], x[:,:,20,:,:], x[:,:,21,:,:], x[:,:,22,:,:], x[:,:,23,:,:], x[:,:,24,:,:],
+                        x[:,:,7,:,:], x[:,:,26,:,:], x[:,:,27,:,:], x[:,:,28,:,:], x[:,:,29,:,:], x[:,:,30,:,:],
+                        x[:,:,31,:,:], x[:,:,32,:,:], x[:,:,33,:,:], x[:,:,34,:,:], x[:,:,35,:,:], x[:,:,36,:,:],
+                        x[:,:,37,:,:], x[:,:,38,:,:], x[:,:,39,:,:], x[:,:,40,:,:], x[:,:,41,:,:], x[:,:,42,:,:],
+                        x[:,:,43,:,:], x[:,:,44,:,:], x[:,:,45,:,:], x[:,:,46,:,:], x[:,:,47,:,:], x[:,:,48,:,:],
+                        x[:,:,49,:,:], x[:,:,50,:,:]), dim = 1)
 
         out_conv1 = self.conv1(x)
+        out_conv1d = self.dropout(out_conv1)
+        
+        out_conv2 = self.conv2(out_conv1d)
+        out_conv2d = self.dropout(out_conv2)
+        
+        out_conv3 = self.conv3_1(self.conv3(out_conv2d))
+        out_conv3d = self.dropout(out_conv3)
 
-        out_conv2 = self.conv2(out_conv1)
-        out_conv3 = self.conv3_1(self.conv3(out_conv2))
-        out_conv4 = self.conv4_1(self.conv4(out_conv3))
-        out_conv5 = self.conv5_1(self.conv5(out_conv4))
-        out_conv6 = self.conv6_1(self.conv6(out_conv5))
+        out_conv4 = self.conv4_1(self.conv4(out_conv3d))
+        out_conv4d = self.dropout(out_conv4)
+
+        out_conv5 = self.conv5_1(self.conv5(out_conv4d))
+        out_conv5d = self.dropout(out_conv5)
+        
+        out_conv6 = self.conv6_1(self.conv6(out_conv5d))
 
         flow6       = self.predict_flow6(out_conv6)
         flow6_up    = self.upsampled_flow6_to_5(flow6)
