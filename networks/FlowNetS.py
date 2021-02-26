@@ -17,11 +17,11 @@ class FlowNetS(nn.Module):
         super(FlowNetS, self).__init__()
 
         self.batchNorm = batchNorm
-        self.conv1    = conv(self.batchNorm,  input_channels,16, kernel_size=7, stride=2)
-        self.conv2    = conv(self.batchNorm, 16,  32, kernel_size=5, stride=2)
-        self.conv3    = conv(self.batchNorm, 32,  64, kernel_size=5, stride=2)
-        self.conv3_1  = conv(self.batchNorm, 64,  64)
-        self.conv4    = conv(self.batchNorm, 64,  128, stride=2)
+        self.conv1    = conv(self.batchNorm,  input_channels, 128, kernel_size=7, stride=2)
+        self.conv2    = conv(self.batchNorm, 128, 128, kernel_size=5, stride=2)
+        self.conv3    = conv(self.batchNorm, 128,  128, kernel_size=5, stride=2)
+        self.conv3_1  = conv(self.batchNorm, 128,  128)
+        self.conv4    = conv(self.batchNorm, 128,  128, stride=2)
         self.conv4_1  = conv(self.batchNorm, 128, 128)
         self.conv5    = conv(self.batchNorm, 128, 128, stride=2)
         self.conv5_1  = conv(self.batchNorm, 128, 128)
