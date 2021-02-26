@@ -31,13 +31,13 @@ class FlowNetS(nn.Module):
         self.deconv5 = deconv(256, 128)
         self.deconv4 = deconv(258, 64)
         self.deconv3 = deconv(194, 32)
-        self.deconv2 = deconv(98, 16)
+        self.deconv2 = deconv(162, 16)
 
         self.predict_flow6 = predict_flow(256)
         self.predict_flow5 = predict_flow(258)
         self.predict_flow4 = predict_flow(194)
-        self.predict_flow3 = predict_flow(98)
-        self.predict_flow2 = predict_flow(50)
+        self.predict_flow3 = predict_flow(162)
+        self.predict_flow2 = predict_flow(128+16+2)
 
         self.upsampled_flow6_to_5 = nn.ConvTranspose2d(
             2, 2, 4, 2, 1, bias=False)
