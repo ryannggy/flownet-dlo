@@ -255,8 +255,8 @@ class FlowNet2C(FlowNetC.FlowNetC):
 class FlowNet2S(FlowNetS.FlowNetS):
     def __init__(self, args, batchNorm=False, div_flow=20):
         # super(FlowNet2S,self).__init__(args, input_channels = 6, batchNorm=batchNorm)  # original input channels is only 6 for 2 images
-        super(FlowNet2S,self).__init__(args, input_channels = 50, batchNorm=batchNorm)  # changed input channels for 50 image inputs
-        # super(FlowNet2S,self).__init__(args, input_channels = 100, batchNorm=batchNorm)  # changed input channels for 50 image inputs
+        # super(FlowNet2S,self).__init__(args, input_channels = 50, batchNorm=batchNorm)  # changed input channels for 50 image inputs
+        super(FlowNet2S,self).__init__(args, input_channels = 100, batchNorm=batchNorm)  # changed input channels for 50 image inputs
         self.rgb_max = args.rgb_max
         self.div_flow = div_flow
         
