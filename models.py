@@ -66,15 +66,12 @@ class FlowNet2S(FlowNetS.FlowNetS):
         out_conv1d = self.dropout(out_conv1)
         
         out_conv2 = self.conv2(out_conv1d)
-        out_conv2.weight = out_conv1.weight.t()
         out_conv2d = self.dropout(out_conv2)
         
         out_conv3 = self.conv3_1(self.conv3(out_conv2d))
-        out_conv3.weight = out_conv2.weight.t()
         out_conv3d = self.dropout(out_conv3)
 
         out_conv4 = self.conv4_1(self.conv4(out_conv3d))
-        out_conv4.weight = out_conv3.weight.t()
         out_conv4d = self.dropout(out_conv4)
 
 #         out_conv5 = self.conv5_1(self.conv5(out_conv4d))
