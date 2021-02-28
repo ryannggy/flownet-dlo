@@ -95,7 +95,7 @@ class FlowNet2S(FlowNetS.FlowNetS):
 #         flow4       = self.predict_flow4(concat4)
         flow4       = self.predict_flow4(out_conv4d)
         flow4_up    = self.upsampled_flow4_to_3(flow4)
-        out_deconv3 = self.deconv3(concat4)
+        out_deconv3 = self.deconv3(out_conv4d)
         
         concat3 = torch.cat((out_conv3,out_deconv3,flow4_up),1)
         flow3       = self.predict_flow3(concat3)
