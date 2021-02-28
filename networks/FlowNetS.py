@@ -105,6 +105,6 @@ class FlowNetS(nn.Module):
         flow2 = self.predict_flow2(concat2)
 
         if self.training:
-            return flow2, flow3, flow4, flow5, flow6
+            return flow2, flow3, flow4 #, flow5, flow6
         else:
             return flow2,
