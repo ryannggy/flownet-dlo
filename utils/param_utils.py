@@ -49,9 +49,11 @@ def parse_flownetsonly(modules, weights, biases, param_prefix=''):
                 if m.bias is not None:
                     m.bias.data[:] = torch.from_numpy(bias)
             else:
-                m.weight.data[:,:,:,:] = torch.from_numpy(weight)
+                # m.weight.data[:,:,:,:] = torch.from_numpy(weight)
+                m.weight.data[:,:,:,:] = torch.from_numpy(weights['conv1'].copy())
                 if m.bias is not None:
-                    m.bias.data[:] = torch.from_numpy(bias)
+                    # m.bias.data[:] = torch.from_numpy(bias)
+                    m.bias.data[:] = torch.from_numpy(biases['conv1'].copy())  
             i = i + 1
     return
 
@@ -96,7 +98,7 @@ def parse_flownetc(modules, weights, biases):
                 m.bias.data[:] = torch.from_numpy(bias)
             else:
                 m.weight.data[:,:,:,:] = torch.from_numpy(weight)
-                m.bias.data[:] = torch.from_numpy(bias)                    
+                m.bias.data[:] = torch.from_numpy(bias)
 
             i = i + 1
     return
