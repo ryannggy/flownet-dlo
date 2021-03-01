@@ -5,9 +5,6 @@ import torch
 import numpy as np 
 
 def conv(batchNorm, in_planes, out_planes, kernel_size=3, stride=1):
-    kk = nn.Conv2d(in_planes, out_planes, kernel_size=kernel_size, stride=stride, padding=(kernel_size-1)//2, bias=False)
-    print(kk.weight.shape)
-    quit()
     if batchNorm:
         return nn.Sequential(
             nn.Conv2d(in_planes, out_planes, kernel_size=kernel_size, stride=stride, padding=(kernel_size-1)//2, bias=False),
