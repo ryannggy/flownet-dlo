@@ -458,11 +458,11 @@ if __name__ == '__main__':
         last_epoch_time = progress._time()
 
         if not args.skip_validation and not args.skip_training:
-            loss_list.loc[epoch] = [epoch] + [train_loss] + [validation_loss]
+            loss_list.loc[epoch] = [epoch] + [train_loss] + [best_err]
         elif args.skip_validation and not args.skip_training:
             loss_list.loc[epoch] = [epoch] + [train_loss] + ['']
         else:
-            loss_list.loc[epoch] = [epoch] + [''] + [validation_loss]
+            loss_list.loc[epoch] = [epoch] + [''] + [best_err]
 
         loss_list.to_csv(f"./checkpoints/loss_list_{epoch}.csv", sep=',', index=False)
         if os.path.exists(f'./checkpoints/loss_list_{epoch-1}.csv'):
