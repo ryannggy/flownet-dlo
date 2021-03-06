@@ -52,7 +52,7 @@ class FlowNet2S(FlowNetS.FlowNetS):
                         np.array(x[:,:,30,:,:]) + np.array(x[:,:,31,:,:]) + np.array(x[:,:,32,:,:]) + np.array(x[:,:,33,:,:]) + np.array(x[:,:,34,:,:]) + np.array(x[:,:,35,:,:]) +
                         np.array(x[:,:,36,:,:]) + np.array(x[:,:,37,:,:]) + np.array(x[:,:,38,:,:]) + np.array(x[:,:,39,:,:]) + np.array(x[:,:,40,:,:]) + np.array(x[:,:,41,:,:]) +
                         np.array(x[:,:,42,:,:]) + np.array(x[:,:,43,:,:]) + np.array(x[:,:,44,:,:]) + np.array(x[:,:,45,:,:]) + np.array(x[:,:,46,:,:]) + np.array(x[:,:,47,:,:]) +
-                        np.array(x[:,:,48,:,:]) + np.array(x[:,:,49,:,:])
+                        np.array(x[:,:,48,:,:]) + np.array(x[:,:,49,:,:]))
 #         x = torch.cat( (                   
 #                         x[:,:,0,:,:], x[:,:,1,:,:], x[:,:,2,:,:], x[:,:,3,:,:], x[:,:,4,:,:], x[:,:,5,:,:],
 #                         x[:,:,6,:,:], x[:,:,7,:,:], x[:,:,8,:,:], x[:,:,9,:,:], x[:,:,10,:,:], x[:,:,11,:,:],
