@@ -17,13 +17,13 @@ class FlowNetS(nn.Module):
         super(FlowNetS, self).__init__()
 
         self.batchNorm = batchNorm
-        self.conv1    = conv(self.batchNorm,  input_channels, 64, kernel_size=7, stride=2)
+        self.conv1    = conv(self.batchNorm,  input_channels, 16, kernel_size=7, stride=2)
 
-        self.conv2    = conv(self.batchNorm, 64, 64, kernel_size=5, stride=2)
-        self.conv3    = conv(self.batchNorm, 64, 64, kernel_size=5, stride=2)
-        self.conv3_1  = conv(self.batchNorm, 64, 128)
+        self.conv2    = conv(self.batchNorm, 16, 32, kernel_size=5, stride=2)
+        self.conv3    = conv(self.batchNorm, 32, 64, kernel_size=5, stride=2)
+        self.conv3_1  = conv(self.batchNorm, 64, 64)
 
-        self.conv4    = conv(self.batchNorm, 128, 128, stride=2)
+        self.conv4    = conv(self.batchNorm, 64, 128, stride=2)
         self.conv4_1  = conv(self.batchNorm, 128, 128)
 #         self.conv5    = conv(self.batchNorm, 128, 128, stride=2)
 #         self.conv5_1  = conv(self.batchNorm, 128, 128)
@@ -33,13 +33,13 @@ class FlowNetS(nn.Module):
 #         self.deconv5 = deconv(256, 128)
 #         self.deconv4 = deconv(258, 64)
         self.deconv3 = deconv(128, 32)
-        self.deconv2 = deconv(32+128+2, 16)
+        self.deconv2 = deconv(32+64+2, 16)
 
 #         self.predict_flow6 = predict_flow(256)
 #         self.predict_flow5 = predict_flow(258)
         self.predict_flow4 = predict_flow(128)
-        self.predict_flow3 = predict_flow(32+128+2)
-        self.predict_flow2 = predict_flow(16+64+2)
+        self.predict_flow3 = predict_flow(32+64+2)
+        self.predict_flow2 = predict_flow(16+32+2)
 
         self.upsampled_flow6_to_5 = nn.ConvTranspose2d(
             2, 2, 4, 2, 1, bias=False)
