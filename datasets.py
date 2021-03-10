@@ -334,7 +334,7 @@ class ImagesFromFolder(data.Dataset):
 
     images = sorted( glob( join(root, '*.' + iext) ) )
     self.image_list = []
-    im1 = images[0]
+    im1 = frame_utils.read_gen(images[0]); print(im1)
     im2 = images[1]
     im3 = images[2]
     im4 = images[3]
