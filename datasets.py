@@ -323,6 +323,165 @@ class MpiSintel(data.Dataset):
     def __len__(self):
         return self.size * self.replicates
 
+    
+class ImagesFromFolder(data.Dataset):
+  def __init__(self, args, is_cropped, root = '/path/to/frames/only/folder', iext = 'png', replicates = 1):
+    self.args = args
+    self.is_cropped = is_cropped
+    self.crop_size = args.crop_size
+    self.render_size = args.inference_size
+    self.replicates = replicates
+
+    images = sorted( glob( join(root, '*.' + iext) ) )
+    self.image_list = []
+    for i in range(len(images)-1):
+        im1 = images[i]
+        im2 = images[i+1]
+        im3 = images[i+2]
+        im4 = images[i+3]
+        im5 = images[i+4]
+        im6 = images[i+5]
+        im7 = images[i+6]
+        im8 = images[i+7]
+        im9 = images[i+8]
+        im10 = images[i+9]
+        im12 = images[i+10]
+        im12 = images[i+11]
+        im13 = images[i+12]
+        im14 = images[i+13]
+        im15 = images[i+14]
+        im16 = images[i+15]
+        im17 = images[i+16]
+        im18 = images[i+17]
+        im19 = images[i+18]
+        im20 = images[i+19]
+        im21 = images[i+20]
+        im22 = images[i+21]
+        im23 = images[i+22]
+        im24 = images[i+23]
+        im25 = images[i+24]
+        im26 = images[i+25]
+        im27 = images[i+26]
+        im28 = images[i+27]
+        im29 = images[i+28]
+        im30 = images[i+29]
+        im31 = images[i+30]
+        im32 = images[i+31]
+        im33 = images[i+32]
+        im34 = images[i+33]
+        im35 = images[i+34]
+        im36 = images[i+35]
+        im37 = images[i+36]
+        im38 = images[i+37]
+        im39 = images[i+38]
+        im40 = images[i+39]
+        im41 = images[i+40]
+        im42 = images[i+41]
+        im43 = images[i+42]
+        im44 = images[i+43]
+        im45 = images[i+44]
+        im46 = images[i+45]
+        im47 = images[i+46]
+        im48 = images[i+47]
+        im49 = images[i+48]
+        im50 = images[i+49]
+        self.image_list += [ [ im1, im2, im3, im4, im5, im6, im7, im8, im9, im10,
+                             im11, im12, im13, im14, im15, im16, im17, im18, im19, im20,
+                             im21, im22, im23, im24, im25, im26, im27, im28, im29, im30,
+                             im31, im32, im33, im34, im35, im36, im37, im38, im39, im40,
+                             im41, im42, im43, im44, im45, im46, im47, im48, im49, im50 ] ]
+
+    self.size = len(self.image_list)
+
+    self.frame_size = frame_utils.read_gen(self.image_list[0][0]).shape
+
+    if (self.render_size[0] < 0) or (self.render_size[1] < 0) or (self.frame_size[0]%64) or (self.frame_size[1]%64):
+        self.render_size[0] = ( (self.frame_size[0])//64 ) * 64
+        self.render_size[1] = ( (self.frame_size[1])//64 ) * 64
+
+    args.inference_size = self.render_size
+
+  def __getitem__(self, index):
+    index = index % self.size
+
+    img1 = frame_utils.read_gen(self.image_list[index][0])
+    img2 = frame_utils.read_gen(self.image_list[index][1])
+    img3 = frame_utils.read_gen(self.image_list[index][2])
+    img4 = frame_utils.read_gen(self.image_list[index][3])
+    img5 = frame_utils.read_gen(self.image_list[index][4])
+    img6 = frame_utils.read_gen(self.image_list[index][5])
+    img7 = frame_utils.read_gen(self.image_list[index][6])
+    img8 = frame_utils.read_gen(self.image_list[index][7])
+    img9 = frame_utils.read_gen(self.image_list[index][8])
+    img10 = frame_utils.read_gen(self.image_list[index][9])
+    img12 = frame_utils.read_gen(self.image_list[index][0])
+    img12 = frame_utils.read_gen(self.image_list[index][11])
+    img13 = frame_utils.read_gen(self.image_list[index][12])
+    img14 = frame_utils.read_gen(self.image_list[index][13])
+    img15 = frame_utils.read_gen(self.image_list[index][14])
+    img16 = frame_utils.read_gen(self.image_list[index][15])
+    img17 = frame_utils.read_gen(self.image_list[index][16])
+    img18 = frame_utils.read_gen(self.image_list[index][17])
+    img19 = frame_utils.read_gen(self.image_list[index][18])
+    img20 = frame_utils.read_gen(self.image_list[index][19])
+    img21 = frame_utils.read_gen(self.image_list[index][20])
+    img22 = frame_utils.read_gen(self.image_list[index][21])
+    img23 = frame_utils.read_gen(self.image_list[index][22])
+    img24 = frame_utils.read_gen(self.image_list[index][23])
+    img25 = frame_utils.read_gen(self.image_list[index][24])
+    img26 = frame_utils.read_gen(self.image_list[index][25])
+    img27 = frame_utils.read_gen(self.image_list[index][26])
+    img28 = frame_utils.read_gen(self.image_list[index][27])
+    img29 = frame_utils.read_gen(self.image_list[index][28])
+    img30 = frame_utils.read_gen(self.image_list[index][29])
+    img31 = frame_utils.read_gen(self.image_list[index][30])
+    img32 = frame_utils.read_gen(self.image_list[index][31])
+    img33 = frame_utils.read_gen(self.image_list[index][32])
+    img34 = frame_utils.read_gen(self.image_list[index][33])
+    img35 = frame_utils.read_gen(self.image_list[index][34])
+    img36 = frame_utils.read_gen(self.image_list[index][35])
+    img37 = frame_utils.read_gen(self.image_list[index][36])
+    img38 = frame_utils.read_gen(self.image_list[index][37])
+    img39 = frame_utils.read_gen(self.image_list[index][38])
+    img40 = frame_utils.read_gen(self.image_list[index][39])
+    img41 = frame_utils.read_gen(self.image_list[index][40])
+    img42 = frame_utils.read_gen(self.image_list[index][41])
+    img43 = frame_utils.read_gen(self.image_list[index][42])
+    img44 = frame_utils.read_gen(self.image_list[index][43])
+    img45 = frame_utils.read_gen(self.image_list[index][44])
+    img46 = frame_utils.read_gen(self.image_list[index][45])
+    img47 = frame_utils.read_gen(self.image_list[index][46])
+    img48 = frame_utils.read_gen(self.image_list[index][47])
+    img49 = frame_utils.read_gen(self.image_list[index][48])
+    img50 = frame_utils.read_gen(self.image_list[index][49])
+                    
+    images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, 
+            img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+            img21, img22, img23, img24, img25,
+            img26, img27, img28, img29, img30,
+            img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
+            img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
+#             img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
+#             img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
+#             img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
+#             img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
+#             img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
+             ]
+    image_size = img1.shape[:2]
+    if self.is_cropped:
+        cropper = StaticRandomCrop(image_size, self.crop_size)
+    else:
+        cropper = StaticCenterCrop(image_size, self.render_size)
+    images = list(map(cropper, images))
+    
+    images = np.array(images).transpose(3,0,1,2)
+    images = torch.from_numpy(images.astype(np.float32))
+
+    return [images], [torch.zeros(images.size()[0:1] + (2,) + images.size()[-2:])]
+
+  def __len__(self):
+    return self.size * self.replicates
+
 """ class MpiSintel(data.Dataset):
     def __init__(self, args, is_cropped = False, root = '', dstype = 'clean', replicates = 1):
         self.args = args
@@ -613,53 +772,6 @@ class ChairsSDHomTrain(ChairsSDHom):
 class ChairsSDHomTest(ChairsSDHom):
     def __init__(self, args, is_cropped = False, root = '', replicates = 1):
         super(ChairsSDHomTest, self).__init__(args, is_cropped = is_cropped, root = root, dstype = 'test', replicates = replicates)
-
-class ImagesFromFolder(data.Dataset):
-  def __init__(self, args, is_cropped, root = '/path/to/frames/only/folder', iext = 'png', replicates = 1):
-    self.args = args
-    self.is_cropped = is_cropped
-    self.crop_size = args.crop_size
-    self.render_size = args.inference_size
-    self.replicates = replicates
-
-    images = sorted( glob( join(root, '*.' + iext) ) )
-    self.image_list = []
-    for i in range(len(images)-1):
-        im1 = images[i]
-        im2 = images[i+1]
-        self.image_list += [ [ im1, im2 ] ]
-
-    self.size = len(self.image_list)
-
-    self.frame_size = frame_utils.read_gen(self.image_list[0][0]).shape
-
-    if (self.render_size[0] < 0) or (self.render_size[1] < 0) or (self.frame_size[0]%64) or (self.frame_size[1]%64):
-        self.render_size[0] = ( (self.frame_size[0])//64 ) * 64
-        self.render_size[1] = ( (self.frame_size[1])//64 ) * 64
-
-    args.inference_size = self.render_size
-
-  def __getitem__(self, index):
-    index = index % self.size
-
-    img1 = frame_utils.read_gen(self.image_list[index][0])
-    img2 = frame_utils.read_gen(self.image_list[index][1])
-
-    images = [img1, img2]
-    image_size = img1.shape[:2]
-    if self.is_cropped:
-        cropper = StaticRandomCrop(image_size, self.crop_size)
-    else:
-        cropper = StaticCenterCrop(image_size, self.render_size)
-    images = list(map(cropper, images))
-    
-    images = np.array(images).transpose(3,0,1,2)
-    images = torch.from_numpy(images.astype(np.float32))
-
-    return [images], [torch.zeros(images.size()[0:1] + (2,) + images.size()[-2:])]
-
-  def __len__(self):
-    return self.size * self.replicates
 
 '''
 import argparse
