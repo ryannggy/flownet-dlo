@@ -345,7 +345,7 @@ class ImagesFromFolder(data.Dataset):
         im8 = images[i+7]
         im9 = images[i+8]
         im10 = images[i+9]
-        im12 = images[i+10]
+        im11 = images[i+10]
         im12 = images[i+11]
         im13 = images[i+12]
         im14 = images[i+13]
