@@ -22,5 +22,5 @@ for subdir, dirs, files in os.walk(cleanPath):
         dirNo = dir_tmp[len(dir_tmp)-1]
         os.system(f"python main.py --inference --model FlowNet2S --save_flow --inference_dataset ImagesFromFolder \
         --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/clean/{dirNo} --inference_visualize \
-        --resume /home/sawsn/FlowNet2S_model_best.pth.tar --save /home/sawsn/flownet-dlo/inference_results/clean/{dirNo}\
+        --resume /home/sawsn/FlowNet2S_model_best.pth.tar --save /home/sawsn/flownet-dlo/inference_results/clean/{dirNo} \
         --skip_training --skip_validation")
