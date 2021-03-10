@@ -14,7 +14,7 @@ for subdir, dirs, files in os.walk(finalPath):
         os.system(f"python main.py --inference --model FlowNet2S --save_flow --inference_dataset ImagesFromFolder \
         --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final/{dirNo} --inference_visualize \
         --resume /home/sawsn/FlowNet2S_model_best.pth.tar --save /home/sawsn/flownet-dlo/inference_results/final/{dirNo} \
-        --skip_training --skip_validation")
+        --skip_training --skip_validation --inference_n_batches 1")
 
 for subdir, dirs, files in os.walk(cleanPath):
     for d in dirs:
@@ -23,4 +23,4 @@ for subdir, dirs, files in os.walk(cleanPath):
         os.system(f"python main.py --inference --model FlowNet2S --save_flow --inference_dataset ImagesFromFolder \
         --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/clean/{dirNo} --inference_visualize \
         --resume /home/sawsn/FlowNet2S_model_best.pth.tar --save /home/sawsn/flownet-dlo/inference_results/clean/{dirNo} \
-        --skip_training --skip_validation")
+        --skip_training --skip_validation --inference_n_batches 1")
