@@ -38,7 +38,6 @@ class MpiSintel(data.Dataset):
 
         flow_root = join(root, 'flow')
         image_root = join(root, dstype)
-        print(image_root)
         file_list = sorted(glob(join(flow_root, '*/*.flo')))
 
         self.flow_list = []
@@ -50,7 +49,7 @@ class MpiSintel(data.Dataset):
                 continue
 
             fbase = file[len(flow_root)+1:]
-            fprefix = fbase[:-8]
+            fprefix = fbase[:-8]; print(fprefix)
             fnum = int(fbase[-8:-4])
 
             img1 = join(image_root, fprefix + "%04d"%(fnum+0) + '.png')
