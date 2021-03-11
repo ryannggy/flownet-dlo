@@ -8,7 +8,7 @@ cleanPath = path + '/clean'
 finalPath = path + '/final'
 
 os.system(f"python main.py --inference --model FlowNet2S --save_flow --inference_dataset MpiSintelFinal \
---inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final --inference_visualize \
+--inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train --inference_visualize \
 --resume /home/sawsn/FlowNet2S_model_best.pth.tar --save /home/sawsn/flownet-dlo/inference_results/final/ \
 --skip_training --skip_validation")
 
