@@ -13,7 +13,7 @@ for subdir, dirs, files in os.walk(finalPath):
         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/clean/{dirNo} \
+        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final/{dirNo} \
         --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
         --save /home/sawsn/flownet-dlo/inference_results/final/{dirNo}")
 
@@ -23,7 +23,7 @@ for subdir, dirs, files in os.walk(cleanPath):
         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final/{dirNo} \
+        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/clean/{dirNo} \
         --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
         --save /home/sawsn/flownet-dlo/inference_results/clean/{dirNo}")
 
