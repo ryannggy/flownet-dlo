@@ -330,8 +330,7 @@ class ImagesFromFolder(data.Dataset):
     self.crop_size = args.crop_size
     self.render_size = args.inference_size
     self.replicates = replicates
-    print(root)
-    quit()
+
     images = sorted( glob( join(root, '*.' + iext) ) )
     self.image_list = []
     im1 = images[0]
