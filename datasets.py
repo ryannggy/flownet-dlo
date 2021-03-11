@@ -38,7 +38,7 @@ class MpiSintel(data.Dataset):
 
         flow_root = join(root, 'flow')
         image_root = join(root, dstype)
-
+        print(image_root)
         file_list = sorted(glob(join(flow_root, '*/*.flo')))
 
         self.flow_list = []
