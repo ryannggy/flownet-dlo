@@ -27,6 +27,99 @@ except:
     from .networks.submodules import *
 'Parameter count = 162,518,834'
 
+class FlowNet2S_1(FlowNetS_1.FlowNetS_1):
+    def __init__(self, args, batchNorm=False, div_flow=20):
+        # super(FlowNet2S,self).__init__(args, input_channels = 6, batchNorm=batchNorm)  # original input channels is only 6 for 2 images
+        super(FlowNet2S_1,self).__init__(args, input_channels = 10, batchNorm=batchNorm)  # changed input channels for 50 image inputs
+        # super(FlowNet2S,self).__init__(args, input_channels = 100, batchNorm=batchNorm)  # changed input channels for 50 image inputs
+        self.rgb_max = args.rgb_max
+        self.div_flow = div_flow
+        
+    def forward(self, inputs):
+        rgb_mean = inputs.contiguous().view(inputs.size()[:2]+(-1,)).mean(dim=-1).view(inputs.size()[:2] + (1,1,1,))
+        x = (inputs - rgb_mean) / self.rgb_max
+        
+        """ Fix X to allow 50 images """
+        # x = torch.cat( (x[:,:,0,:,:], x[:,:,1,:,:]), dim = 1)   # this is original X for image pair input
+        x1 = x[:,:,0,:,:] + x[:,:,1,:,:] + x[:,:,2,:,:] + x[:,:,3,:,:] + x[:,:,4,:,:]
+        x2 = x[:,:,5,:,:] + x[:,:,6,:,:] + x[:,:,7,:,:] + x[:,:,8,:,:] + x[:,:,9,:,:] 
+        x3 = x[:,:,10,:,:] + x[:,:,11,:,:] + x[:,:,12,:,:] + x[:,:,13,:,:] + x[:,:,14,:,:]
+        x4 = x[:,:,15,:,:] + x[:,:,16,:,:] + x[:,:,17,:,:] + x[:,:,18,:,:] + x[:,:,19,:,:]
+        x5 = x[:,:,20,:,:] + x[:,:,21,:,:] + x[:,:,22,:,:] + x[:,:,23,:,:] + x[:,:,24,:,:]
+        x6 = x[:,:,25,:,:] + x[:,:,26,:,:] + x[:,:,27,:,:] + x[:,:,28,:,:] + x[:,:,29,:,:]
+        x7 = x[:,:,30,:,:] + x[:,:,31,:,:] + x[:,:,32,:,:] + x[:,:,33,:,:] + x[:,:,34,:,:]
+        x8 = x[:,:,35,:,:] + x[:,:,36,:,:] + x[:,:,37,:,:] + x[:,:,38,:,:] + x[:,:,39,:,:]
+        x9 = x[:,:,40,:,:] + x[:,:,41,:,:] + x[:,:,42,:,:] + x[:,:,43,:,:] + x[:,:,44,:,:]
+        x10 = x[:,:,45,:,:] + x[:,:,46,:,:] + x[:,:,47,:,:] + x[:,:,48,:,:] + x[:,:,49,:,:] 
+        x = torch.cat((x1,x2,x3,x4,x5,x6,x7,x8,x9,x10), dim=1)
+#         x = torch.cat( (                   
+#                         x[:,:,0,:,:], x[:,:,1,:,:], x[:,:,2,:,:], x[:,:,3,:,:], x[:,:,4,:,:], x[:,:,5,:,:],
+#                         x[:,:,6,:,:], x[:,:,7,:,:], x[:,:,8,:,:], x[:,:,9,:,:], x[:,:,10,:,:], x[:,:,11,:,:],
+#                         x[:,:,12,:,:], x[:,:,13,:,:], x[:,:,14,:,:], x[:,:,15,:,:], x[:,:,16,:,:], x[:,:,17,:,:],
+#                         x[:,:,18,:,:], x[:,:,19,:,:], x[:,:,20,:,:], x[:,:,21,:,:], x[:,:,22,:,:], x[:,:,23,:,:],
+#                         x[:,:,24,:,:], x[:,:,25,:,:], 
+#                         x[:,:,26,:,:], x[:,:,27,:,:], x[:,:,28,:,:], x[:,:,29,:,:],
+#                         x[:,:,30,:,:], x[:,:,31,:,:], x[:,:,32,:,:], x[:,:,33,:,:], x[:,:,34,:,:], x[:,:,35,:,:],
+#                         x[:,:,36,:,:], x[:,:,37,:,:], x[:,:,38,:,:], x[:,:,39,:,:], x[:,:,40,:,:], x[:,:,41,:,:],
+#                         x[:,:,42,:,:], x[:,:,43,:,:], x[:,:,44,:,:], x[:,:,45,:,:], x[:,:,46,:,:], x[:,:,47,:,:],
+#                         x[:,:,48,:,:], x[:,:,49,:,:],
+#                         x[:,:,50,:,:], x[:,:,51,:,:], x[:,:,52,:,:], x[:,:,53,:,:], x[:,:,54,:,:], x[:,:,55,:,:],
+#                         x[:,:,56,:,:], x[:,:,57,:,:], x[:,:,58,:,:], x[:,:,59,:,:], x[:,:,60,:,:], x[:,:,61,:,:],
+#                         x[:,:,62,:,:], x[:,:,63,:,:], x[:,:,64,:,:], x[:,:,65,:,:], x[:,:,66,:,:], x[:,:,67,:,:],
+#                         x[:,:,68,:,:], x[:,:,69,:,:], x[:,:,70,:,:], x[:,:,71,:,:], x[:,:,72,:,:], x[:,:,73,:,:],
+#                         x[:,:,74,:,:], x[:,:,75,:,:], x[:,:,76,:,:], x[:,:,77,:,:], x[:,:,78,:,:], x[:,:,79,:,:],
+#                         x[:,:,80,:,:], x[:,:,81,:,:], x[:,:,82,:,:], x[:,:,83,:,:], x[:,:,84,:,:], x[:,:,85,:,:],
+#                         x[:,:,86,:,:], x[:,:,87,:,:], x[:,:,88,:,:], x[:,:,89,:,:], x[:,:,90,:,:], x[:,:,91,:,:],
+#                         x[:,:,92,:,:], x[:,:,93,:,:], x[:,:,94,:,:], x[:,:,95,:,:], x[:,:,96,:,:], x[:,:,97,:,:],
+#                         x[:,:,98,:,:], x[:,:,99,:,:]
+#                        ), dim = 1)
+
+        out_conv1 = self.conv1(x)
+        out_conv1d = self.dropout(out_conv1)
+        
+        out_conv2 = self.conv2(out_conv1d)
+        out_conv2d = self.dropout(out_conv2)
+        
+        out_conv3 = self.conv3_1(self.conv3(out_conv2d))
+        out_conv3d = self.dropout(out_conv3)
+
+        out_conv4 = self.conv4_1(self.conv4(out_conv3d))
+        out_conv4d = self.dropout(out_conv4)
+
+#         out_conv5 = self.conv5_1(self.conv5(out_conv4d))
+#         out_conv5d = self.dropout(out_conv5)
+        
+#         out_conv6 = self.conv6_1(self.conv6(out_conv5d))
+
+#         flow6       = self.predict_flow6(out_conv6)
+#         flow6_up    = self.upsampled_flow6_to_5(flow6)
+#         out_deconv5 = self.deconv5(out_conv6)
+        
+#         concat5 = torch.cat((out_conv5,out_deconv5,flow6_up),1)
+#         flow5       = self.predict_flow5(concat5)
+#         flow5_up    = self.upsampled_flow5_to_4(flow5)
+#         out_deconv4 = self.deconv4(concat5)
+        
+#         concat4 = torch.cat((out_conv4,out_deconv4,flow5_up),1)
+#         flow4       = self.predict_flow4(concat4)
+        flow4       = self.predict_flow4(out_conv4d)
+#         flow4_up    = self.upsampled_flow4_to_3(flow4)
+#         out_deconv3 = self.deconv3(out_conv4d)
+        
+#         concat3 = torch.cat((out_conv3,out_deconv3,flow4_up),1)
+#         flow3       = self.predict_flow3(concat3)
+#         flow3_up    = self.upsampled_flow3_to_2(flow3)
+#         out_deconv2 = self.deconv2(concat3)
+
+#         concat2 = torch.cat((out_conv2,out_deconv2,flow3_up),1)
+#         flow2 = self.predict_flow2(concat2)
+
+        if self.training:
+            return flow4 #flow2,flow3,flow4,flow5,flow6
+        else:
+            return self.upsample1(flow4*self.div_flow)
+
+
 class FlowNet2S(FlowNetS.FlowNetS):
     def __init__(self, args, batchNorm=False, div_flow=20):
         # super(FlowNet2S,self).__init__(args, input_channels = 6, batchNorm=batchNorm)  # original input channels is only 6 for 2 images
