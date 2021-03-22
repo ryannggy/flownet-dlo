@@ -11,7 +11,7 @@ for subdir, dirs, files in os.walk(cleanPath):
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
         --inference_dataset_root /home/sawsn/inference_dataset/50-128128/train/clean/{dirNo} \
-        --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
+        --resume /home/sawsn/saved-results-init/tachysense-gray-50-128128-nodo/FlowNet2S_model_best.pth.tar \
         --save /home/sawsn/inference_saved_results/50-128128/clean/{dirNo}")
 
 path = os.getcwd()
@@ -24,7 +24,7 @@ for subdir, dirs, files in os.walk(cleanPath):
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
         --inference_dataset_root /home/sawsn/inference_dataset/50-6464/train/clean/{dirNo} \
-        --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
+        --resume /home/sawsn/saved-results-init/tachysense-gray-50-6464-nodo/FlowNet2S_model_best.pth.tar \
         --save /home/sawsn/inference_saved_results/50-6464/clean/{dirNo}")
 
 """ 100-IMAGE DATASET INFERENCE """
