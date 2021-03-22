@@ -1,8 +1,7 @@
-
 import os
 
 path = os.getcwd()
-path += '/../tachysense-gray-50-6464/train'
+path += '/../inference_dataset/50-128128/train'
 
 cleanPath = path + '/clean'
 finalPath = path + '/final'
@@ -13,9 +12,9 @@ for subdir, dirs, files in os.walk(finalPath):
         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final/{dirNo} \
-        --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
-        --save /home/sawsn/flownet-dlo/inference_results/final/{dirNo}")
+        --inference_dataset_root /home/sawsn/inference_dataset/50-128128/train/final/{dirNo} \
+        --resume /home/sawsn/saved-results-init/tachysense-gray-50-128128-nodo/FlowNet2S_model_best.pth.tar \
+        --save /home/sawsn/flownet-dlo/inference_saved_results/50-128128/final/{dirNo}")
 
 for subdir, dirs, files in os.walk(cleanPath):
     for d in dirs:
@@ -23,9 +22,10 @@ for subdir, dirs, files in os.walk(cleanPath):
         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
         --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/clean/{dirNo} \
-        --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
-        --save /home/sawsn/flownet-dlo/inference_results/clean/{dirNo}")
+        --inference_dataset_root /home/sawsn/inference_dataset/50-128128/train/clean/{dirNo} \
+        --resume /home/sawsn/saved-results-init/tachysense-gray-50-128128-nodo/FlowNet2S_model_best.pth.tar \
+        --save /home/sawsn/flownet-dlo/inference_saved_results/50-128128/clean/{dirNo}")
+
 
 # os.system(f"python main.py --inference --model FlowNet2S --save_flow --inference_dataset MpiSintelFinal \
 # --inference_dataset_root /home/sawsn/tachysense-gray-50-6464/train/final --inference_visualize \
