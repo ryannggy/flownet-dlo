@@ -12,9 +12,9 @@ import numpy as np
 from .submodules import *
 'Parameter count : 38,676,504 '
 
-class FlowNetS(nn.Module):
+class FlowNetS_1(nn.Module):
     def __init__(self, args, input_channels=12, batchNorm=True):
-        super(FlowNetS, self).__init__()
+        super(FlowNetS_1, self).__init__()
 
         self.batchNorm = batchNorm
         self.conv1    = conv(self.batchNorm,  input_channels, 16, kernel_size=7, stride=2)
@@ -75,8 +75,7 @@ class FlowNetS(nn.Module):
         out_conv3d = self.dropout(out_conv3d)
         
         out_conv4  = self.conv4_1(self.conv4(out_conv3d))
-        out_conv4.weight = out_conv3.weight.t()
-#         out_conv4d = self.dropout(out_conv4)
+        out_conv4d = self.dropout(out_conv4)
 #         out_conv5  = self.conv5_1(self.conv5(out_conv4d))
 #         out_conv5d = self.dropout(out_conv5)
 #         out_conv6  = self.conv6_1(self.conv6(out_conv5d))
@@ -94,19 +93,19 @@ class FlowNetS(nn.Module):
 #         concat4 = torch.cat((out_conv4, out_deconv4, flow5_up), 1)
 #         flow4 = self.predict_flow4(concat4)
         flow4 = self.predict_flow(out_conv4)
-        flow4_up = self.upsampled_flow4_to_3(flow4)
-        out_deconv3 = self.deconv3(out_conv4)
+#         flow4_up = self.upsampled_flow4_to_3(flow4)
+#         out_deconv3 = self.deconv3(out_conv4)
 
-        concat3 = torch.cat((out_conv3, out_deconv3, flow4_up), 1)
+#         concat3 = torch.cat((out_conv3, out_deconv3, flow4_up), 1)
 
-        flow3 = self.predict_flow3(concat3)
-        flow3_up = self.upsampled_flow3_to_2(flow3)
-        out_deconv2 = self.deconv2(concat3)
+#         flow3 = self.predict_flow3(concat3)
+#         flow3_up = self.upsampled_flow3_to_2(flow3)
+#         out_deconv2 = self.deconv2(concat3)
 
-        concat2 = torch.cat((out_conv2, out_deconv2, flow3_up), 1)
-        flow2 = self.predict_flow2(concat2)
+#         concat2 = torch.cat((out_conv2, out_deconv2, flow3_up), 1)
+#         flow2 = self.predict_flow2(concat2)
 
         if self.training:
-            return flow2, flow3, flow4 #, flow5, flow6
+            return flow4 #flow2, flow3, flow4, flow5, flow6
         else:
-            return flow2,
+            return flow4 # flow2,
