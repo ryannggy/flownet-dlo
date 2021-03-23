@@ -153,7 +153,7 @@ class MpiSintel(data.Dataset):
 #             img99 = join(image_root, fprefix + "%04d"%(fnum+98) + '.png')
 #             img100 = join(image_root, fprefix + "%04d"%(fnum+99) + '.png')
 
-            if not isfile(img1) or not isfile(img2) or not isfile(img3) or not isfile(file):
+            if not isfile(img1) or not isfile(img2) or not isfile(file):
                 continue
 
             self.image_list += [[img1, img2, 
