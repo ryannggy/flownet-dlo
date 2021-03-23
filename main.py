@@ -464,9 +464,9 @@ if __name__ == '__main__':
         else:
             loss_list.loc[epoch] = [epoch] + [''] + [best_err]
         if not args.inference:
-            loss_list.to_csv(f"./checkpoints/loss_list_{epoch}.csv", sep=',', index=False)
-            if os.path.exists(f'./checkpoints/loss_list_{epoch-1}.csv'):
-                os.remove(f"./checkpoints/loss_list_{epoch-1}.csv")
+            loss_list.to_csv(f"./../checkpoints/loss_list_{epoch}.csv", sep=',', index=False)
+            if os.path.exists(f'./../checkpoints/loss_list_{epoch-1}.csv'):
+                os.remove(f"./../checkpoints/loss_list_{epoch-1}.csv")
 
     print("\n")
 
