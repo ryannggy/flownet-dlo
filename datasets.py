@@ -441,7 +441,7 @@ class ImagesFromFolder(data.Dataset):
                          im21, im22, im23, im24, im25,
                          im26, im27, im28, im29, im30,
                          im31, im32, im33, im34, im35, im36, im37, im38, im39, im40,
-                         im41, im42, im43, im44, im45, im46, im47, im48, im49, im50
+                         im41, im42, im43, im44, im45, im46, im47, im48, im49, im50,
                          im51, im52, im53, im54, im55, im56, im57, im58, im59, im60,
                          im61, im62, im63, im64, im65, im66, im67, im68, im69, im70,
                          im71, im27, im73, im74, im75, im76, im77, im78, im79, im80,
