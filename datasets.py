@@ -54,29 +54,29 @@ class MpiSintel(data.Dataset):
 
             img1 = join(image_root, fprefix + "%04d"%(fnum+0) + '.png')
             img2 = join(image_root, fprefix + "%04d"%(fnum+1) + '.png')
-            img3 = join(image_root, fprefix + "%04d"%(fnum+2) + '.png')
-            img4 = join(image_root, fprefix + "%04d"%(fnum+3) + '.png')
-            img5 = join(image_root, fprefix + "%04d"%(fnum+4) + '.png')
-            img6 = join(image_root, fprefix + "%04d"%(fnum+5) + '.png')
-            img7 = join(image_root, fprefix + "%04d"%(fnum+6) + '.png')
-            img8 = join(image_root, fprefix + "%04d"%(fnum+7) + '.png')
-            img9 = join(image_root, fprefix + "%04d"%(fnum+9) + '.png')
-            img10 = join(image_root, fprefix + "%04d"%(fnum+9) + '.png')
-            img11 = join(image_root, fprefix + "%04d"%(fnum+10) + '.png')
-            img12 = join(image_root, fprefix + "%04d"%(fnum+11) + '.png')
-            img13 = join(image_root, fprefix + "%04d"%(fnum+12) + '.png')
-            img14 = join(image_root, fprefix + "%04d"%(fnum+13) + '.png')
-            img15 = join(image_root, fprefix + "%04d"%(fnum+14) + '.png')
-            img16 = join(image_root, fprefix + "%04d"%(fnum+15) + '.png')
-            img17 = join(image_root, fprefix + "%04d"%(fnum+16) + '.png')
-            img18 = join(image_root, fprefix + "%04d"%(fnum+17) + '.png')
-            img19 = join(image_root, fprefix + "%04d"%(fnum+18) + '.png')
-            img20 = join(image_root, fprefix + "%04d"%(fnum+19) + '.png')
-            img21 = join(image_root, fprefix + "%04d"%(fnum+20) + '.png')
-            img22 = join(image_root, fprefix + "%04d"%(fnum+21) + '.png')
-            img23 = join(image_root, fprefix + "%04d"%(fnum+22) + '.png')
-            img24 = join(image_root, fprefix + "%04d"%(fnum+23) + '.png')
-            img25 = join(image_root, fprefix + "%04d"%(fnum+24) + '.png')
+#             img3 = join(image_root, fprefix + "%04d"%(fnum+2) + '.png')
+#             img4 = join(image_root, fprefix + "%04d"%(fnum+3) + '.png')
+#             img5 = join(image_root, fprefix + "%04d"%(fnum+4) + '.png')
+#             img6 = join(image_root, fprefix + "%04d"%(fnum+5) + '.png')
+#             img7 = join(image_root, fprefix + "%04d"%(fnum+6) + '.png')
+#             img8 = join(image_root, fprefix + "%04d"%(fnum+7) + '.png')
+#             img9 = join(image_root, fprefix + "%04d"%(fnum+9) + '.png')
+#             img10 = join(image_root, fprefix + "%04d"%(fnum+9) + '.png')
+#             img11 = join(image_root, fprefix + "%04d"%(fnum+10) + '.png')
+#             img12 = join(image_root, fprefix + "%04d"%(fnum+11) + '.png')
+#             img13 = join(image_root, fprefix + "%04d"%(fnum+12) + '.png')
+#             img14 = join(image_root, fprefix + "%04d"%(fnum+13) + '.png')
+#             img15 = join(image_root, fprefix + "%04d"%(fnum+14) + '.png')
+#             img16 = join(image_root, fprefix + "%04d"%(fnum+15) + '.png')
+#             img17 = join(image_root, fprefix + "%04d"%(fnum+16) + '.png')
+#             img18 = join(image_root, fprefix + "%04d"%(fnum+17) + '.png')
+#             img19 = join(image_root, fprefix + "%04d"%(fnum+18) + '.png')
+#             img20 = join(image_root, fprefix + "%04d"%(fnum+19) + '.png')
+#             img21 = join(image_root, fprefix + "%04d"%(fnum+20) + '.png')
+#             img22 = join(image_root, fprefix + "%04d"%(fnum+21) + '.png')
+#             img23 = join(image_root, fprefix + "%04d"%(fnum+22) + '.png')
+#             img24 = join(image_root, fprefix + "%04d"%(fnum+23) + '.png')
+#             img25 = join(image_root, fprefix + "%04d"%(fnum+24) + '.png')
 #             img26 = join(image_root, fprefix + "%04d"%(fnum+25) + '.png')
 #             img27 = join(image_root, fprefix + "%04d"%(fnum+26) + '.png')
 #             img28 = join(image_root, fprefix + "%04d"%(fnum+27) + '.png')
@@ -156,9 +156,10 @@ class MpiSintel(data.Dataset):
             if not isfile(img1) or not isfile(img2) or not isfile(img3) or not isfile(file):
                 continue
 
-            self.image_list += [[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, 
-                                img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-                                img21, img22, img23, img24, img25, 
+            self.image_list += [[img1, img2, 
+#                                 img3, img4, img5, img6, img7, img8, img9, img10, 
+#                                 img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+#                                 img21, img22, img23, img24, img25, 
 #                                 img26, img27, img28, img29, img30,
 #                                 img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
 #                                 img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
@@ -188,29 +189,29 @@ class MpiSintel(data.Dataset):
 
         img1 = frame_utils.read_gen(self.image_list[index][0])
         img2 = frame_utils.read_gen(self.image_list[index][1])
-        img3 = frame_utils.read_gen(self.image_list[index][2])
-        img4 = frame_utils.read_gen(self.image_list[index][3])
-        img5 = frame_utils.read_gen(self.image_list[index][4])
-        img6 = frame_utils.read_gen(self.image_list[index][5])
-        img7 = frame_utils.read_gen(self.image_list[index][6])
-        img8 = frame_utils.read_gen(self.image_list[index][7])
-        img9 = frame_utils.read_gen(self.image_list[index][8])
-        img10 = frame_utils.read_gen(self.image_list[index][9])
-        img11 = frame_utils.read_gen(self.image_list[index][10])
-        img12 = frame_utils.read_gen(self.image_list[index][11])
-        img13 = frame_utils.read_gen(self.image_list[index][12])
-        img14 = frame_utils.read_gen(self.image_list[index][13])
-        img15 = frame_utils.read_gen(self.image_list[index][14])
-        img16 = frame_utils.read_gen(self.image_list[index][15])
-        img17 = frame_utils.read_gen(self.image_list[index][16])
-        img18 = frame_utils.read_gen(self.image_list[index][17])
-        img19 = frame_utils.read_gen(self.image_list[index][18])
-        img20 = frame_utils.read_gen(self.image_list[index][19])
-        img21 = frame_utils.read_gen(self.image_list[index][20])
-        img22 = frame_utils.read_gen(self.image_list[index][21])
-        img23 = frame_utils.read_gen(self.image_list[index][22])
-        img24 = frame_utils.read_gen(self.image_list[index][23])
-        img25 = frame_utils.read_gen(self.image_list[index][24])
+#         img3 = frame_utils.read_gen(self.image_list[index][2])
+#         img4 = frame_utils.read_gen(self.image_list[index][3])
+#         img5 = frame_utils.read_gen(self.image_list[index][4])
+#         img6 = frame_utils.read_gen(self.image_list[index][5])
+#         img7 = frame_utils.read_gen(self.image_list[index][6])
+#         img8 = frame_utils.read_gen(self.image_list[index][7])
+#         img9 = frame_utils.read_gen(self.image_list[index][8])
+#         img10 = frame_utils.read_gen(self.image_list[index][9])
+#         img11 = frame_utils.read_gen(self.image_list[index][10])
+#         img12 = frame_utils.read_gen(self.image_list[index][11])
+#         img13 = frame_utils.read_gen(self.image_list[index][12])
+#         img14 = frame_utils.read_gen(self.image_list[index][13])
+#         img15 = frame_utils.read_gen(self.image_list[index][14])
+#         img16 = frame_utils.read_gen(self.image_list[index][15])
+#         img17 = frame_utils.read_gen(self.image_list[index][16])
+#         img18 = frame_utils.read_gen(self.image_list[index][17])
+#         img19 = frame_utils.read_gen(self.image_list[index][18])
+#         img20 = frame_utils.read_gen(self.image_list[index][19])
+#         img21 = frame_utils.read_gen(self.image_list[index][20])
+#         img22 = frame_utils.read_gen(self.image_list[index][21])
+#         img23 = frame_utils.read_gen(self.image_list[index][22])
+#         img24 = frame_utils.read_gen(self.image_list[index][23])
+#         img25 = frame_utils.read_gen(self.image_list[index][24])
 #         img26 = frame_utils.read_gen(self.image_list[index][25])
 #         img27 = frame_utils.read_gen(self.image_list[index][26])
 #         img28 = frame_utils.read_gen(self.image_list[index][27])
@@ -289,9 +290,10 @@ class MpiSintel(data.Dataset):
 
         flow = frame_utils.read_gen(self.flow_list[index])
 
-        images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, 
-                img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-                img21, img22, img23, img24, img25,
+        images = [img1, img2, 
+#                 img3, img4, img5, img6, img7, img8, img9, img10, 
+#                 img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+#                 img21, img22, img23, img24, img25,
 #                 img26, img27, img28, img29, img30,
 #                 img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
 #                 img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
@@ -335,29 +337,29 @@ class ImagesFromFolder(data.Dataset):
     self.image_list = []
     im1 = images[0]
     im2 = images[1]
-    im3 = images[2]
-    im4 = images[3]
-    im5 = images[4]
-    im6 = images[5]
-    im7 = images[6]
-    im8 = images[7]
-    im9 = images[8]
-    im10 = images[9]
-    im11 = images[10]
-    im12 = images[11]
-    im13 = images[12]
-    im14 = images[13]
-    im15 = images[14]
-    im16 = images[15]
-    im17 = images[16]
-    im18 = images[17]
-    im19 = images[18]
-    im20 = images[19]
-    im21 = images[20]
-    im22 = images[21]
-    im23 = images[22]
-    im24 = images[23]
-    im25 = images[24]
+#     im3 = images[2]
+#     im4 = images[3]
+#     im5 = images[4]
+#     im6 = images[5]
+#     im7 = images[6]
+#     im8 = images[7]
+#     im9 = images[8]
+#     im10 = images[9]
+#     im11 = images[10]
+#     im12 = images[11]
+#     im13 = images[12]
+#     im14 = images[13]
+#     im15 = images[14]
+#     im16 = images[15]
+#     im17 = images[16]
+#     im18 = images[17]
+#     im19 = images[18]
+#     im20 = images[19]
+#     im21 = images[20]
+#     im22 = images[21]
+#     im23 = images[22]
+#     im24 = images[23]
+#     im25 = images[24]
 #     im26 = images[25]
 #     im27 = images[26]
 #     im28 = images[27]
@@ -383,9 +385,10 @@ class ImagesFromFolder(data.Dataset):
 #     im48 = images[47]
 #     im49 = images[48]
 #     im50 = images[49]
-    self.image_list += [ [ im1, im2, im3, im4, im5, im6, im7, im8, im9, im10,
-                         im11, im12, im13, im14, im15, im16, im17, im18, im19, im20,
-                         im21, im22, im23, im24, im25,
+    self.image_list += [ [ im1, im2, 
+#                          im3, im4, im5, im6, im7, im8, im9, im10,
+#                          im11, im12, im13, im14, im15, im16, im17, im18, im19, im20,
+#                          im21, im22, im23, im24, im25,
 #                          im26, im27, im28, im29, im30,
 #                          im31, im32, im33, im34, im35, im36, im37, im38, im39, im40,
 #                          im41, im42, im43, im44, im45, im46, im47, im48, im49, im50
@@ -406,29 +409,29 @@ class ImagesFromFolder(data.Dataset):
 
     img1 = frame_utils.read_gen(self.image_list[index][0]); print(img1)
     img2 = frame_utils.read_gen(self.image_list[index][1])
-    img3 = frame_utils.read_gen(self.image_list[index][2])
-    img4 = frame_utils.read_gen(self.image_list[index][3])
-    img5 = frame_utils.read_gen(self.image_list[index][4])
-    img6 = frame_utils.read_gen(self.image_list[index][5])
-    img7 = frame_utils.read_gen(self.image_list[index][6])
-    img8 = frame_utils.read_gen(self.image_list[index][7])
-    img9 = frame_utils.read_gen(self.image_list[index][8])
-    img10 = frame_utils.read_gen(self.image_list[index][9])
-    img11 = frame_utils.read_gen(self.image_list[index][0])
-    img12 = frame_utils.read_gen(self.image_list[index][11])
-    img13 = frame_utils.read_gen(self.image_list[index][12])
-    img14 = frame_utils.read_gen(self.image_list[index][13])
-    img15 = frame_utils.read_gen(self.image_list[index][14])
-    img16 = frame_utils.read_gen(self.image_list[index][15])
-    img17 = frame_utils.read_gen(self.image_list[index][16])
-    img18 = frame_utils.read_gen(self.image_list[index][17])
-    img19 = frame_utils.read_gen(self.image_list[index][18])
-    img20 = frame_utils.read_gen(self.image_list[index][19])
-    img21 = frame_utils.read_gen(self.image_list[index][20])
-    img22 = frame_utils.read_gen(self.image_list[index][21])
-    img23 = frame_utils.read_gen(self.image_list[index][22])
-    img24 = frame_utils.read_gen(self.image_list[index][23])
-    img25 = frame_utils.read_gen(self.image_list[index][24])
+#     img3 = frame_utils.read_gen(self.image_list[index][2])
+#     img4 = frame_utils.read_gen(self.image_list[index][3])
+#     img5 = frame_utils.read_gen(self.image_list[index][4])
+#     img6 = frame_utils.read_gen(self.image_list[index][5])
+#     img7 = frame_utils.read_gen(self.image_list[index][6])
+#     img8 = frame_utils.read_gen(self.image_list[index][7])
+#     img9 = frame_utils.read_gen(self.image_list[index][8])
+#     img10 = frame_utils.read_gen(self.image_list[index][9])
+#     img11 = frame_utils.read_gen(self.image_list[index][0])
+#     img12 = frame_utils.read_gen(self.image_list[index][11])
+#     img13 = frame_utils.read_gen(self.image_list[index][12])
+#     img14 = frame_utils.read_gen(self.image_list[index][13])
+#     img15 = frame_utils.read_gen(self.image_list[index][14])
+#     img16 = frame_utils.read_gen(self.image_list[index][15])
+#     img17 = frame_utils.read_gen(self.image_list[index][16])
+#     img18 = frame_utils.read_gen(self.image_list[index][17])
+#     img19 = frame_utils.read_gen(self.image_list[index][18])
+#     img20 = frame_utils.read_gen(self.image_list[index][19])
+#     img21 = frame_utils.read_gen(self.image_list[index][20])
+#     img22 = frame_utils.read_gen(self.image_list[index][21])
+#     img23 = frame_utils.read_gen(self.image_list[index][22])
+#     img24 = frame_utils.read_gen(self.image_list[index][23])
+#     img25 = frame_utils.read_gen(self.image_list[index][24])
 #     img26 = frame_utils.read_gen(self.image_list[index][25])
 #     img27 = frame_utils.read_gen(self.image_list[index][26])
 #     img28 = frame_utils.read_gen(self.image_list[index][27])
@@ -455,9 +458,10 @@ class ImagesFromFolder(data.Dataset):
 #     img49 = frame_utils.read_gen(self.image_list[index][48])
 #     img50 = frame_utils.read_gen(self.image_list[index][49])
                     
-    images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, 
-            img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-            img21, img22, img23, img24, img25,
+    images = [img1, img2, 
+#             img3, img4, img5, img6, img7, img8, img9, img10, 
+#             img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+#             img21, img22, img23, img24, img25,
 #             img26, img27, img28, img29, img30,
 #             img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
 #             img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
