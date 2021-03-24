@@ -1,58 +1,58 @@
 import os
 
-""" 50-IMAGE DATASET INFERENCE """
-path = os.getcwd()
-path += '/../inference_dataset/50-128128/train'
-cleanPath = path + '/clean'
-for subdir, dirs, files in os.walk(cleanPath):
-    for d in dirs:
-        dir_tmp = d.split('/')
-        dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
-        os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
-        --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/inference_dataset/50-128128/train/clean/{dirNo} \
-        --resume /home/sawsn/saved-results-init/tachysense-gray-50-128128-nodo/FlowNet2S_model_best.pth.tar \
-        --save /home/sawsn/inference_saved_results/50-128128/clean/{dirNo}")
+# """ 50-IMAGE DATASET INFERENCE """
+# path = os.getcwd()
+# path += '/../inference_dataset/50-128128/train'
+# cleanPath = path + '/clean'
+# for subdir, dirs, files in os.walk(cleanPath):
+#     for d in dirs:
+#         dir_tmp = d.split('/')
+#         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
+#         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
+#         --inference_dataset ImagesFromFolder --inference_visualize \
+#         --inference_dataset_root /home/sawsn/inference_dataset/50-128128/train/clean/{dirNo} \
+#         --resume /home/sawsn/checkpoints/tachysense-gray-50-128128/FlowNet2S_model_best.pth.tar \
+#         --save /home/sawsn/inference_saved_results/50-128128/clean/{dirNo}")
 
-path = os.getcwd()
-path += '/../inference_dataset/50-6464/train'
-cleanPath = path + '/clean'
-for subdir, dirs, files in os.walk(cleanPath):
-    for d in dirs:
-        dir_tmp = d.split('/')
-        dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
-        os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
-        --inference_dataset ImagesFromFolder --inference_visualize \
-        --inference_dataset_root /home/sawsn/inference_dataset/50-6464/train/clean/{dirNo} \
-        --resume /home/sawsn/saved-results-init/tachysense-gray-50-6464-nodo/FlowNet2S_model_best.pth.tar \
-        --save /home/sawsn/inference_saved_results/50-6464/clean/{dirNo}")
+# path = os.getcwd()
+# path += '/../inference_dataset/50-6464/train'
+# cleanPath = path + '/clean'
+# for subdir, dirs, files in os.walk(cleanPath):
+#     for d in dirs:
+#         dir_tmp = d.split('/')
+#         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
+#         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
+#         --inference_dataset ImagesFromFolder --inference_visualize \
+#         --inference_dataset_root /home/sawsn/inference_dataset/50-6464/train/clean/{dirNo} \
+#         --resume /home/sawsn/checkpoints/tachysense-gray-50-6464/FlowNet2S_model_best.pth.tar \
+#         --save /home/sawsn/inference_saved_results/50-6464/clean/{dirNo}")
 
 """ 100-IMAGE DATASET INFERENCE """
-# path = os.getcwd()
-# path += '/../inference_dataset/100-128128/train'
-# cleanPath = path + '/clean'
-# for subdir, dirs, files in os.walk(cleanPath):
-#     for d in dirs:
-#         dir_tmp = d.split('/')
-#         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
-#         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
-#         --inference_dataset ImagesFromFolder --inference_visualize \
-#         --inference_dataset_root /home/sawsn/inference_dataset/100-128128/train/clean/{dirNo} \
-#         --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
-#         --save /home/sawsn/inference_saved_results/100-128128/clean/{dirNo}")
+path = os.getcwd()
+path += '/../inference_dataset/100-128128/train'
+cleanPath = path + '/clean'
+for subdir, dirs, files in os.walk(cleanPath):
+    for d in dirs:
+        dir_tmp = d.split('/')
+        dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
+        os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
+        --inference_dataset ImagesFromFolder --inference_visualize \
+        --inference_dataset_root /home/sawsn/inference_dataset/100-128128/train/clean/{dirNo} \
+        --resume /home/sawsn/checkpoints/tachysense-gray-100-128128/FlowNet2S_model_best.pth.tar \
+        --save /home/sawsn/inference_saved_results/100-128128/clean/{dirNo}")
 
-# path = os.getcwd()
-# path += '/../inference_dataset/100-6464/train'
-# cleanPath = path + '/clean'
-# for subdir, dirs, files in os.walk(cleanPath):
-#     for d in dirs:
-#         dir_tmp = d.split('/')
-#         dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
-#         os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
-#         --inference_dataset ImagesFromFolder --inference_visualize \
-#         --inference_dataset_root /home/sawsn/inference_dataset/100-6464/train/clean/{dirNo} \
-#         --resume /home/sawsn/FlowNet2S_model_best.pth.tar \
-#         --save /home/sawsn/inference_saved_results/100-6464/clean/{dirNo}")
+path = os.getcwd()
+path += '/../inference_dataset/100-6464/train'
+cleanPath = path + '/clean'
+for subdir, dirs, files in os.walk(cleanPath):
+    for d in dirs:
+        dir_tmp = d.split('/')
+        dirNo = dir_tmp[len(dir_tmp)-1]; print(f"Working on: {dirNo}")
+        os.system(f"CUDA_VISIBLE_DEVICES=1 python main.py --inference --model FlowNet2S --save_flow \
+        --inference_dataset ImagesFromFolder --inference_visualize \
+        --inference_dataset_root /home/sawsn/inference_dataset/100-6464/train/clean/{dirNo} \
+        --resume /home/sawsn/checkpoints/tachysense-gray-100-128128/FlowNet2S_model_best.pth.tar \
+        --save /home/sawsn/inference_saved_results/100-6464/clean/{dirNo}")
 
 
 """ 25-IMAGE DATASET INFERENCE """
