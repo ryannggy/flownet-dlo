@@ -314,8 +314,10 @@ class MpiSintel(data.Dataset):
 
         images = np.array(images).transpose(3,0,1,2)
         
+        print(np.shape(flow))
         flow = flow.transpose(2,0,1)
-
+        print(np.shape(flow))
+        quit()
         images = torch.from_numpy(images.astype(np.float32))
         flow = torch.from_numpy(flow.astype(np.float32))
 
