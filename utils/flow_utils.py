@@ -18,7 +18,8 @@ def readFlow(fn):
             return None
         else:
             w = np.fromfile(f, np.int32, count=1)
-            h = np.fromfile(f, np.int32, count=1)
+            h = np.fromfile(f, np.int32, count=1); print(f'w{w} and h{h}')
+            quit()
             # print 'Reading %d x %d flo file\n' % (w, h)
             data = np.fromfile(f, np.float32, count=2*int(w)*int(h))
             # Reshape data into 3D array (columns, rows, bands)
