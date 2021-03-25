@@ -102,56 +102,56 @@ class MpiSintel(data.Dataset):
             img48 = join(image_root, fprefix + "%04d"%(fnum+47) + '.png')
             img49 = join(image_root, fprefix + "%04d"%(fnum+48) + '.png')
             img50 = join(image_root, fprefix + "%04d"%(fnum+49) + '.png')
-            img51 = join(image_root, fprefix + "%04d"%(fnum+50) + '.png')
-            img52 = join(image_root, fprefix + "%04d"%(fnum+51) + '.png')
-            img53 = join(image_root, fprefix + "%04d"%(fnum+52) + '.png')
-            img54 = join(image_root, fprefix + "%04d"%(fnum+53) + '.png')
-            img55 = join(image_root, fprefix + "%04d"%(fnum+54) + '.png')
-            img56 = join(image_root, fprefix + "%04d"%(fnum+55) + '.png')
-            img57 = join(image_root, fprefix + "%04d"%(fnum+56) + '.png')
-            img58 = join(image_root, fprefix + "%04d"%(fnum+57) + '.png')
-            img59 = join(image_root, fprefix + "%04d"%(fnum+58) + '.png')
-            img60 = join(image_root, fprefix + "%04d"%(fnum+59) + '.png')
-            img61 = join(image_root, fprefix + "%04d"%(fnum+60) + '.png')
-            img62 = join(image_root, fprefix + "%04d"%(fnum+61) + '.png')
-            img63 = join(image_root, fprefix + "%04d"%(fnum+62) + '.png')
-            img64 = join(image_root, fprefix + "%04d"%(fnum+63) + '.png')
-            img65 = join(image_root, fprefix + "%04d"%(fnum+64) + '.png')
-            img66 = join(image_root, fprefix + "%04d"%(fnum+65) + '.png')
-            img67 = join(image_root, fprefix + "%04d"%(fnum+66) + '.png')
-            img68 = join(image_root, fprefix + "%04d"%(fnum+67) + '.png')
-            img69 = join(image_root, fprefix + "%04d"%(fnum+68) + '.png')
-            img70 = join(image_root, fprefix + "%04d"%(fnum+69) + '.png')
-            img71 = join(image_root, fprefix + "%04d"%(fnum+70) + '.png')
-            img72 = join(image_root, fprefix + "%04d"%(fnum+71) + '.png')
-            img73 = join(image_root, fprefix + "%04d"%(fnum+72) + '.png')
-            img74 = join(image_root, fprefix + "%04d"%(fnum+73) + '.png')
-            img75 = join(image_root, fprefix + "%04d"%(fnum+74) + '.png')
-            img76 = join(image_root, fprefix + "%04d"%(fnum+75) + '.png')
-            img77 = join(image_root, fprefix + "%04d"%(fnum+76) + '.png')
-            img78 = join(image_root, fprefix + "%04d"%(fnum+77) + '.png')
-            img79 = join(image_root, fprefix + "%04d"%(fnum+78) + '.png')
-            img80 = join(image_root, fprefix + "%04d"%(fnum+79) + '.png')
-            img81 = join(image_root, fprefix + "%04d"%(fnum+80) + '.png')
-            img82 = join(image_root, fprefix + "%04d"%(fnum+81) + '.png')
-            img83 = join(image_root, fprefix + "%04d"%(fnum+82) + '.png')
-            img84 = join(image_root, fprefix + "%04d"%(fnum+83) + '.png')
-            img85 = join(image_root, fprefix + "%04d"%(fnum+84) + '.png')
-            img86 = join(image_root, fprefix + "%04d"%(fnum+85) + '.png')
-            img87 = join(image_root, fprefix + "%04d"%(fnum+86) + '.png')
-            img88 = join(image_root, fprefix + "%04d"%(fnum+87) + '.png')
-            img89 = join(image_root, fprefix + "%04d"%(fnum+88) + '.png')
-            img90 = join(image_root, fprefix + "%04d"%(fnum+89) + '.png')
-            img91 = join(image_root, fprefix + "%04d"%(fnum+90) + '.png')
-            img92 = join(image_root, fprefix + "%04d"%(fnum+91) + '.png')
-            img93 = join(image_root, fprefix + "%04d"%(fnum+92) + '.png')
-            img94 = join(image_root, fprefix + "%04d"%(fnum+93) + '.png')
-            img95 = join(image_root, fprefix + "%04d"%(fnum+94) + '.png')
-            img96 = join(image_root, fprefix + "%04d"%(fnum+95) + '.png')
-            img97 = join(image_root, fprefix + "%04d"%(fnum+96) + '.png')
-            img98 = join(image_root, fprefix + "%04d"%(fnum+97) + '.png')
-            img99 = join(image_root, fprefix + "%04d"%(fnum+98) + '.png')
-            img100 = join(image_root, fprefix + "%04d"%(fnum+99) + '.png')
+#             img51 = join(image_root, fprefix + "%04d"%(fnum+50) + '.png')
+#             img52 = join(image_root, fprefix + "%04d"%(fnum+51) + '.png')
+#             img53 = join(image_root, fprefix + "%04d"%(fnum+52) + '.png')
+#             img54 = join(image_root, fprefix + "%04d"%(fnum+53) + '.png')
+#             img55 = join(image_root, fprefix + "%04d"%(fnum+54) + '.png')
+#             img56 = join(image_root, fprefix + "%04d"%(fnum+55) + '.png')
+#             img57 = join(image_root, fprefix + "%04d"%(fnum+56) + '.png')
+#             img58 = join(image_root, fprefix + "%04d"%(fnum+57) + '.png')
+#             img59 = join(image_root, fprefix + "%04d"%(fnum+58) + '.png')
+#             img60 = join(image_root, fprefix + "%04d"%(fnum+59) + '.png')
+#             img61 = join(image_root, fprefix + "%04d"%(fnum+60) + '.png')
+#             img62 = join(image_root, fprefix + "%04d"%(fnum+61) + '.png')
+#             img63 = join(image_root, fprefix + "%04d"%(fnum+62) + '.png')
+#             img64 = join(image_root, fprefix + "%04d"%(fnum+63) + '.png')
+#             img65 = join(image_root, fprefix + "%04d"%(fnum+64) + '.png')
+#             img66 = join(image_root, fprefix + "%04d"%(fnum+65) + '.png')
+#             img67 = join(image_root, fprefix + "%04d"%(fnum+66) + '.png')
+#             img68 = join(image_root, fprefix + "%04d"%(fnum+67) + '.png')
+#             img69 = join(image_root, fprefix + "%04d"%(fnum+68) + '.png')
+#             img70 = join(image_root, fprefix + "%04d"%(fnum+69) + '.png')
+#             img71 = join(image_root, fprefix + "%04d"%(fnum+70) + '.png')
+#             img72 = join(image_root, fprefix + "%04d"%(fnum+71) + '.png')
+#             img73 = join(image_root, fprefix + "%04d"%(fnum+72) + '.png')
+#             img74 = join(image_root, fprefix + "%04d"%(fnum+73) + '.png')
+#             img75 = join(image_root, fprefix + "%04d"%(fnum+74) + '.png')
+#             img76 = join(image_root, fprefix + "%04d"%(fnum+75) + '.png')
+#             img77 = join(image_root, fprefix + "%04d"%(fnum+76) + '.png')
+#             img78 = join(image_root, fprefix + "%04d"%(fnum+77) + '.png')
+#             img79 = join(image_root, fprefix + "%04d"%(fnum+78) + '.png')
+#             img80 = join(image_root, fprefix + "%04d"%(fnum+79) + '.png')
+#             img81 = join(image_root, fprefix + "%04d"%(fnum+80) + '.png')
+#             img82 = join(image_root, fprefix + "%04d"%(fnum+81) + '.png')
+#             img83 = join(image_root, fprefix + "%04d"%(fnum+82) + '.png')
+#             img84 = join(image_root, fprefix + "%04d"%(fnum+83) + '.png')
+#             img85 = join(image_root, fprefix + "%04d"%(fnum+84) + '.png')
+#             img86 = join(image_root, fprefix + "%04d"%(fnum+85) + '.png')
+#             img87 = join(image_root, fprefix + "%04d"%(fnum+86) + '.png')
+#             img88 = join(image_root, fprefix + "%04d"%(fnum+87) + '.png')
+#             img89 = join(image_root, fprefix + "%04d"%(fnum+88) + '.png')
+#             img90 = join(image_root, fprefix + "%04d"%(fnum+89) + '.png')
+#             img91 = join(image_root, fprefix + "%04d"%(fnum+90) + '.png')
+#             img92 = join(image_root, fprefix + "%04d"%(fnum+91) + '.png')
+#             img93 = join(image_root, fprefix + "%04d"%(fnum+92) + '.png')
+#             img94 = join(image_root, fprefix + "%04d"%(fnum+93) + '.png')
+#             img95 = join(image_root, fprefix + "%04d"%(fnum+94) + '.png')
+#             img96 = join(image_root, fprefix + "%04d"%(fnum+95) + '.png')
+#             img97 = join(image_root, fprefix + "%04d"%(fnum+96) + '.png')
+#             img98 = join(image_root, fprefix + "%04d"%(fnum+97) + '.png')
+#             img99 = join(image_root, fprefix + "%04d"%(fnum+98) + '.png')
+#             img100 = join(image_root, fprefix + "%04d"%(fnum+99) + '.png')
 
             if not isfile(img1) or not isfile(img2) or not isfile(file):
                 continue
@@ -163,11 +163,11 @@ class MpiSintel(data.Dataset):
                                 img26, img27, img28, img29, img30,
                                 img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
                                 img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
-                                img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
-                                img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
-                                img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
-                                img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
-                                img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
+#                                 img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
+#                                 img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
+#                                 img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
+#                                 img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
+#                                 img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
                                 ]]
             self.flow_list += [file]
 
@@ -237,56 +237,56 @@ class MpiSintel(data.Dataset):
         img48 = frame_utils.read_gen(self.image_list[index][47])
         img49 = frame_utils.read_gen(self.image_list[index][48])
         img50 = frame_utils.read_gen(self.image_list[index][49])
-        img51 = frame_utils.read_gen(self.image_list[index][50])
-        img52 = frame_utils.read_gen(self.image_list[index][51])
-        img53 = frame_utils.read_gen(self.image_list[index][52])
-        img54 = frame_utils.read_gen(self.image_list[index][53])
-        img55 = frame_utils.read_gen(self.image_list[index][54])
-        img56 = frame_utils.read_gen(self.image_list[index][55])
-        img57 = frame_utils.read_gen(self.image_list[index][56])
-        img58 = frame_utils.read_gen(self.image_list[index][57])
-        img59 = frame_utils.read_gen(self.image_list[index][58])
-        img60 = frame_utils.read_gen(self.image_list[index][59])
-        img61 = frame_utils.read_gen(self.image_list[index][60])
-        img62 = frame_utils.read_gen(self.image_list[index][61])
-        img63 = frame_utils.read_gen(self.image_list[index][62])
-        img64 = frame_utils.read_gen(self.image_list[index][63])
-        img65 = frame_utils.read_gen(self.image_list[index][64])
-        img66 = frame_utils.read_gen(self.image_list[index][65])
-        img67 = frame_utils.read_gen(self.image_list[index][66])
-        img68 = frame_utils.read_gen(self.image_list[index][67])
-        img69 = frame_utils.read_gen(self.image_list[index][68])
-        img70 = frame_utils.read_gen(self.image_list[index][69])
-        img71 = frame_utils.read_gen(self.image_list[index][70])
-        img72 = frame_utils.read_gen(self.image_list[index][71])
-        img73 = frame_utils.read_gen(self.image_list[index][72])
-        img74 = frame_utils.read_gen(self.image_list[index][73])
-        img75 = frame_utils.read_gen(self.image_list[index][74])
-        img76 = frame_utils.read_gen(self.image_list[index][75])
-        img77 = frame_utils.read_gen(self.image_list[index][76])
-        img78 = frame_utils.read_gen(self.image_list[index][77])
-        img79 = frame_utils.read_gen(self.image_list[index][78])
-        img80 = frame_utils.read_gen(self.image_list[index][79])
-        img81 = frame_utils.read_gen(self.image_list[index][80])
-        img82 = frame_utils.read_gen(self.image_list[index][81])
-        img83 = frame_utils.read_gen(self.image_list[index][82])
-        img84 = frame_utils.read_gen(self.image_list[index][83])
-        img85 = frame_utils.read_gen(self.image_list[index][84])
-        img86 = frame_utils.read_gen(self.image_list[index][85])
-        img87 = frame_utils.read_gen(self.image_list[index][86])
-        img88 = frame_utils.read_gen(self.image_list[index][87])
-        img89 = frame_utils.read_gen(self.image_list[index][88])
-        img90 = frame_utils.read_gen(self.image_list[index][89])
-        img91 = frame_utils.read_gen(self.image_list[index][90])
-        img92 = frame_utils.read_gen(self.image_list[index][91])
-        img93 = frame_utils.read_gen(self.image_list[index][92])
-        img94 = frame_utils.read_gen(self.image_list[index][93])
-        img95 = frame_utils.read_gen(self.image_list[index][94])
-        img96 = frame_utils.read_gen(self.image_list[index][95])
-        img97 = frame_utils.read_gen(self.image_list[index][96])
-        img98 = frame_utils.read_gen(self.image_list[index][97])
-        img99 = frame_utils.read_gen(self.image_list[index][98])
-        img100 = frame_utils.read_gen(self.image_list[index][99])
+#         img51 = frame_utils.read_gen(self.image_list[index][50])
+#         img52 = frame_utils.read_gen(self.image_list[index][51])
+#         img53 = frame_utils.read_gen(self.image_list[index][52])
+#         img54 = frame_utils.read_gen(self.image_list[index][53])
+#         img55 = frame_utils.read_gen(self.image_list[index][54])
+#         img56 = frame_utils.read_gen(self.image_list[index][55])
+#         img57 = frame_utils.read_gen(self.image_list[index][56])
+#         img58 = frame_utils.read_gen(self.image_list[index][57])
+#         img59 = frame_utils.read_gen(self.image_list[index][58])
+#         img60 = frame_utils.read_gen(self.image_list[index][59])
+#         img61 = frame_utils.read_gen(self.image_list[index][60])
+#         img62 = frame_utils.read_gen(self.image_list[index][61])
+#         img63 = frame_utils.read_gen(self.image_list[index][62])
+#         img64 = frame_utils.read_gen(self.image_list[index][63])
+#         img65 = frame_utils.read_gen(self.image_list[index][64])
+#         img66 = frame_utils.read_gen(self.image_list[index][65])
+#         img67 = frame_utils.read_gen(self.image_list[index][66])
+#         img68 = frame_utils.read_gen(self.image_list[index][67])
+#         img69 = frame_utils.read_gen(self.image_list[index][68])
+#         img70 = frame_utils.read_gen(self.image_list[index][69])
+#         img71 = frame_utils.read_gen(self.image_list[index][70])
+#         img72 = frame_utils.read_gen(self.image_list[index][71])
+#         img73 = frame_utils.read_gen(self.image_list[index][72])
+#         img74 = frame_utils.read_gen(self.image_list[index][73])
+#         img75 = frame_utils.read_gen(self.image_list[index][74])
+#         img76 = frame_utils.read_gen(self.image_list[index][75])
+#         img77 = frame_utils.read_gen(self.image_list[index][76])
+#         img78 = frame_utils.read_gen(self.image_list[index][77])
+#         img79 = frame_utils.read_gen(self.image_list[index][78])
+#         img80 = frame_utils.read_gen(self.image_list[index][79])
+#         img81 = frame_utils.read_gen(self.image_list[index][80])
+#         img82 = frame_utils.read_gen(self.image_list[index][81])
+#         img83 = frame_utils.read_gen(self.image_list[index][82])
+#         img84 = frame_utils.read_gen(self.image_list[index][83])
+#         img85 = frame_utils.read_gen(self.image_list[index][84])
+#         img86 = frame_utils.read_gen(self.image_list[index][85])
+#         img87 = frame_utils.read_gen(self.image_list[index][86])
+#         img88 = frame_utils.read_gen(self.image_list[index][87])
+#         img89 = frame_utils.read_gen(self.image_list[index][88])
+#         img90 = frame_utils.read_gen(self.image_list[index][89])
+#         img91 = frame_utils.read_gen(self.image_list[index][90])
+#         img92 = frame_utils.read_gen(self.image_list[index][91])
+#         img93 = frame_utils.read_gen(self.image_list[index][92])
+#         img94 = frame_utils.read_gen(self.image_list[index][93])
+#         img95 = frame_utils.read_gen(self.image_list[index][94])
+#         img96 = frame_utils.read_gen(self.image_list[index][95])
+#         img97 = frame_utils.read_gen(self.image_list[index][96])
+#         img98 = frame_utils.read_gen(self.image_list[index][97])
+#         img99 = frame_utils.read_gen(self.image_list[index][98])
+#         img100 = frame_utils.read_gen(self.image_list[index][99])
 
         flow = frame_utils.read_gen(self.flow_list[index])
 
@@ -297,11 +297,11 @@ class MpiSintel(data.Dataset):
                 img26, img27, img28, img29, img30,
                 img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
                 img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
-                img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
-                img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
-                img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
-                img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
-                img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
+#                 img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
+#                 img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
+#                 img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
+#                 img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
+#                 img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
                  ]
         image_size = img1.shape[:2]
 
@@ -385,56 +385,56 @@ class ImagesFromFolder(data.Dataset):
     im48 = images[47]
     im49 = images[48]
     im50 = images[49]
-    im51 = images[50]
-    im52 = images[51]
-    im53 = images[52]
-    im54 = images[53]
-    im55 = images[54]
-    im56 = images[55]
-    im57 = images[56]
-    im58 = images[57]
-    im59 = images[58]
-    im50 = images[59]
-    im61 = images[60]
-    im62 = images[61]
-    im63 = images[62]
-    im64 = images[63]
-    im65 = images[64]
-    im66 = images[65]
-    im67 = images[66]
-    im68 = images[67]
-    im69 = images[68]
-    im70 = images[69]
-    im71 = images[70]
-    im72 = images[71]
-    im73 = images[72]
-    im74 = images[73]
-    im75 = images[74]
-    im76 = images[75]
-    im77 = images[76]
-    im78 = images[77]
-    im79 = images[78]
-    im80 = images[79]
-    im81 = images[80]
-    im82 = images[81]
-    im83 = images[82]
-    im84 = images[83]
-    im85 = images[84]
-    im86 = images[85]
-    im87 = images[86]
-    im88 = images[87]
-    im89 = images[88]
-    im90 = images[89]
-    im91 = images[90]
-    im92 = images[91]
-    im93 = images[92]
-    im94 = images[93]
-    im95 = images[94]
-    im96 = images[95]
-    im97 = images[96]
-    im98 = images[97]
-    im99 = images[98]
-    im100 = images[99]
+#     im51 = images[50]
+#     im52 = images[51]
+#     im53 = images[52]
+#     im54 = images[53]
+#     im55 = images[54]
+#     im56 = images[55]
+#     im57 = images[56]
+#     im58 = images[57]
+#     im59 = images[58]
+#     im50 = images[59]
+#     im61 = images[60]
+#     im62 = images[61]
+#     im63 = images[62]
+#     im64 = images[63]
+#     im65 = images[64]
+#     im66 = images[65]
+#     im67 = images[66]
+#     im68 = images[67]
+#     im69 = images[68]
+#     im70 = images[69]
+#     im71 = images[70]
+#     im72 = images[71]
+#     im73 = images[72]
+#     im74 = images[73]
+#     im75 = images[74]
+#     im76 = images[75]
+#     im77 = images[76]
+#     im78 = images[77]
+#     im79 = images[78]
+#     im80 = images[79]
+#     im81 = images[80]
+#     im82 = images[81]
+#     im83 = images[82]
+#     im84 = images[83]
+#     im85 = images[84]
+#     im86 = images[85]
+#     im87 = images[86]
+#     im88 = images[87]
+#     im89 = images[88]
+#     im90 = images[89]
+#     im91 = images[90]
+#     im92 = images[91]
+#     im93 = images[92]
+#     im94 = images[93]
+#     im95 = images[94]
+#     im96 = images[95]
+#     im97 = images[96]
+#     im98 = images[97]
+#     im99 = images[98]
+#     im100 = images[99]
     self.image_list += [ [ im1, im2, 
                          im3, im4, im5, im6, im7, im8, im9, im10,
                          im11, im12, im13, im14, im15, im16, im17, im18, im19, im20,
@@ -442,11 +442,11 @@ class ImagesFromFolder(data.Dataset):
                          im26, im27, im28, im29, im30,
                          im31, im32, im33, im34, im35, im36, im37, im38, im39, im40,
                          im41, im42, im43, im44, im45, im46, im47, im48, im49, im50,
-                         im51, im52, im53, im54, im55, im56, im57, im58, im59, im60,
-                         im61, im62, im63, im64, im65, im66, im67, im68, im69, im70,
-                         im71, im27, im73, im74, im75, im76, im77, im78, im79, im80,
-                         im81, im82, im83, im84, im85, im86, im87, im88, im89, im90,
-                         im91, im92, im93, im94, im95, im96, im97, im98, im99, im100
+#                          im51, im52, im53, im54, im55, im56, im57, im58, im59, im60,
+#                          im61, im62, im63, im64, im65, im66, im67, im68, im69, im70,
+#                          im71, im27, im73, im74, im75, im76, im77, im78, im79, im80,
+#                          im81, im82, im83, im84, im85, im86, im87, im88, im89, im90,
+#                          im91, im92, im93, im94, im95, im96, im97, im98, im99, im100
                          ] ]
 
     self.size = len(self.image_list)
@@ -512,56 +512,56 @@ class ImagesFromFolder(data.Dataset):
     img48 = frame_utils.read_gen(self.image_list[index][47])
     img49 = frame_utils.read_gen(self.image_list[index][48])
     img50 = frame_utils.read_gen(self.image_list[index][49])
-    img51 = frame_utils.read_gen(self.image_list[index][50])
-    img52 = frame_utils.read_gen(self.image_list[index][51])
-    img53 = frame_utils.read_gen(self.image_list[index][52])
-    img54 = frame_utils.read_gen(self.image_list[index][53])
-    img55 = frame_utils.read_gen(self.image_list[index][54])
-    img56 = frame_utils.read_gen(self.image_list[index][55])
-    img57 = frame_utils.read_gen(self.image_list[index][56])
-    img58 = frame_utils.read_gen(self.image_list[index][57])
-    img59 = frame_utils.read_gen(self.image_list[index][58])
-    img60 = frame_utils.read_gen(self.image_list[index][59])
-    img61 = frame_utils.read_gen(self.image_list[index][60])
-    img62 = frame_utils.read_gen(self.image_list[index][61])
-    img63 = frame_utils.read_gen(self.image_list[index][62])
-    img64 = frame_utils.read_gen(self.image_list[index][63])
-    img65 = frame_utils.read_gen(self.image_list[index][64])
-    img66 = frame_utils.read_gen(self.image_list[index][65])
-    img67 = frame_utils.read_gen(self.image_list[index][66])
-    img68 = frame_utils.read_gen(self.image_list[index][67])
-    img69 = frame_utils.read_gen(self.image_list[index][68])
-    img70 = frame_utils.read_gen(self.image_list[index][69])
-    img71 = frame_utils.read_gen(self.image_list[index][70])
-    img72 = frame_utils.read_gen(self.image_list[index][71])
-    img73 = frame_utils.read_gen(self.image_list[index][72])
-    img74 = frame_utils.read_gen(self.image_list[index][73])
-    img75 = frame_utils.read_gen(self.image_list[index][74])
-    img76 = frame_utils.read_gen(self.image_list[index][75])
-    img77 = frame_utils.read_gen(self.image_list[index][76])
-    img78 = frame_utils.read_gen(self.image_list[index][77])
-    img79 = frame_utils.read_gen(self.image_list[index][78])
-    img80 = frame_utils.read_gen(self.image_list[index][79])
-    img81 = frame_utils.read_gen(self.image_list[index][80])
-    img82 = frame_utils.read_gen(self.image_list[index][81])
-    img83 = frame_utils.read_gen(self.image_list[index][82])
-    img84 = frame_utils.read_gen(self.image_list[index][83])
-    img85 = frame_utils.read_gen(self.image_list[index][84])
-    img86 = frame_utils.read_gen(self.image_list[index][85])
-    img87 = frame_utils.read_gen(self.image_list[index][86])
-    img88 = frame_utils.read_gen(self.image_list[index][87])
-    img89 = frame_utils.read_gen(self.image_list[index][88])
-    img90 = frame_utils.read_gen(self.image_list[index][89])
-    img91 = frame_utils.read_gen(self.image_list[index][90])
-    img92 = frame_utils.read_gen(self.image_list[index][91])
-    img93 = frame_utils.read_gen(self.image_list[index][92])
-    img94 = frame_utils.read_gen(self.image_list[index][93])
-    img95 = frame_utils.read_gen(self.image_list[index][94])
-    img96 = frame_utils.read_gen(self.image_list[index][95])
-    img97 = frame_utils.read_gen(self.image_list[index][96])
-    img98 = frame_utils.read_gen(self.image_list[index][97])
-    img99 = frame_utils.read_gen(self.image_list[index][98])
-    img100 = frame_utils.read_gen(self.image_list[index][99])
+#     img51 = frame_utils.read_gen(self.image_list[index][50])
+#     img52 = frame_utils.read_gen(self.image_list[index][51])
+#     img53 = frame_utils.read_gen(self.image_list[index][52])
+#     img54 = frame_utils.read_gen(self.image_list[index][53])
+#     img55 = frame_utils.read_gen(self.image_list[index][54])
+#     img56 = frame_utils.read_gen(self.image_list[index][55])
+#     img57 = frame_utils.read_gen(self.image_list[index][56])
+#     img58 = frame_utils.read_gen(self.image_list[index][57])
+#     img59 = frame_utils.read_gen(self.image_list[index][58])
+#     img60 = frame_utils.read_gen(self.image_list[index][59])
+#     img61 = frame_utils.read_gen(self.image_list[index][60])
+#     img62 = frame_utils.read_gen(self.image_list[index][61])
+#     img63 = frame_utils.read_gen(self.image_list[index][62])
+#     img64 = frame_utils.read_gen(self.image_list[index][63])
+#     img65 = frame_utils.read_gen(self.image_list[index][64])
+#     img66 = frame_utils.read_gen(self.image_list[index][65])
+#     img67 = frame_utils.read_gen(self.image_list[index][66])
+#     img68 = frame_utils.read_gen(self.image_list[index][67])
+#     img69 = frame_utils.read_gen(self.image_list[index][68])
+#     img70 = frame_utils.read_gen(self.image_list[index][69])
+#     img71 = frame_utils.read_gen(self.image_list[index][70])
+#     img72 = frame_utils.read_gen(self.image_list[index][71])
+#     img73 = frame_utils.read_gen(self.image_list[index][72])
+#     img74 = frame_utils.read_gen(self.image_list[index][73])
+#     img75 = frame_utils.read_gen(self.image_list[index][74])
+#     img76 = frame_utils.read_gen(self.image_list[index][75])
+#     img77 = frame_utils.read_gen(self.image_list[index][76])
+#     img78 = frame_utils.read_gen(self.image_list[index][77])
+#     img79 = frame_utils.read_gen(self.image_list[index][78])
+#     img80 = frame_utils.read_gen(self.image_list[index][79])
+#     img81 = frame_utils.read_gen(self.image_list[index][80])
+#     img82 = frame_utils.read_gen(self.image_list[index][81])
+#     img83 = frame_utils.read_gen(self.image_list[index][82])
+#     img84 = frame_utils.read_gen(self.image_list[index][83])
+#     img85 = frame_utils.read_gen(self.image_list[index][84])
+#     img86 = frame_utils.read_gen(self.image_list[index][85])
+#     img87 = frame_utils.read_gen(self.image_list[index][86])
+#     img88 = frame_utils.read_gen(self.image_list[index][87])
+#     img89 = frame_utils.read_gen(self.image_list[index][88])
+#     img90 = frame_utils.read_gen(self.image_list[index][89])
+#     img91 = frame_utils.read_gen(self.image_list[index][90])
+#     img92 = frame_utils.read_gen(self.image_list[index][91])
+#     img93 = frame_utils.read_gen(self.image_list[index][92])
+#     img94 = frame_utils.read_gen(self.image_list[index][93])
+#     img95 = frame_utils.read_gen(self.image_list[index][94])
+#     img96 = frame_utils.read_gen(self.image_list[index][95])
+#     img97 = frame_utils.read_gen(self.image_list[index][96])
+#     img98 = frame_utils.read_gen(self.image_list[index][97])
+#     img99 = frame_utils.read_gen(self.image_list[index][98])
+#     img100 = frame_utils.read_gen(self.image_list[index][99])
     images = [img1, img2, 
             img3, img4, img5, img6, img7, img8, img9, img10, 
             img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
@@ -569,11 +569,11 @@ class ImagesFromFolder(data.Dataset):
             img26, img27, img28, img29, img30,
             img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
             img41, img42, img43, img44, img45, img46, img47, img48, img49, img50,
-            img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
-            img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
-            img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
-            img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
-            img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
+#             img51, img52, img53, img54, img55, img56, img57, img58, img59, img60,
+#             img61, img62, img63, img64, img65, img66, img67, img68, img69, img70,
+#             img71, img27, img73, img74, img75, img76, img77, img78, img79, img80,
+#             img81, img82, img83, img84, img85, img86, img87, img88, img89, img90,
+#             img91, img92, img93, img94, img95, img96, img97, img98, img99, img100
              ]
     image_size = img1.shape[:2]
     if self.is_cropped:
